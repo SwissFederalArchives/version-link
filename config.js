@@ -2,7 +2,7 @@
 var respecConfig = {
     specStatus: "unofficial",
     shortName: 'version-link',
-    edDraftURI: "",
+    edDraftURI: "https://version.link/",
     maxTocLevel: 4,
     postProcess: [jumpTo],
     github: {
