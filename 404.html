@@ -5,7 +5,7 @@
     <script>
       function jumpTo(config) {
         let element = document.getElementById(location.pathname.substr(location.pathname.lastIndexOf("/")+1));
-        if(typeof element !== "undefined")
+        if(element !== null && typeof element !== "undefined")
             element.scrollIntoView(true)
       }
     </script>
