@@ -30,7 +30,7 @@
 
 #### vl:predecessor {#predecessor}
 
-#### vl:sucessor {#sucessor}
+#### vl:successor {#successor}
 
 #### vl:startEvent {#startEvent}
 
