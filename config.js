@@ -3,7 +3,9 @@ var respecConfig = {
     specStatus: "unofficial",
     shortName: 'version-link',
     edDraftURI: "https://version.link/",
+    latestVersion: null,
     maxTocLevel: 4,
+    postProcess: [jumpTo],
     github: {
       repoURL: "https://github.com/bfh/version-link",
       branch: "documentation", // alternative branch
