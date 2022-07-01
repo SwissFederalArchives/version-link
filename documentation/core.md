@@ -16,14 +16,50 @@
 
 ### Classes
 
+#### vl:Identity {#Identity}
+
 #### vl:Version {#Version}
 
-#### vl:Hierarchy {#Hierarchy}
+#### vl:VersionedIdentitySet {#VersionedIdentitySet}
 
 ### Properties
 
-#### vl:hasVersion {#hasVersion}
+#### vl:identity {#identity}
+
+#### vl:version {#version}
+
+#### vl:predecessor {#predecessor}
+
+#### vl:sucessor {#sucessor}
+
+#### vl:startEvent {#startEvent}
+
+#### vl:endEvent {#endEvent}
 
 <aside class='advisement'>
 Example of an "advisement".
 </aside>
+
+## Change Event Schema
+### Classes
+
+#### vl:ChangeEvent {#ChangeEvent}
+
+#### vl:ChangeOfName {#ChangeOfName}
+
+#### vl:ChangeInHierarchy {#ChangeInHierarchy}
+
+#### vl:Seperation {#Seperation}
+
+#### vl:Combination {#Combination}
+
+
+## Profile Schema
+
+### Classes
+
+#### vl:Profile {#Profile}
+
+
+### Properties
+#### vl:namePredicate {#namePredicate}
