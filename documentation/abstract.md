@@ -5,4 +5,4 @@ A new version of a identity is the result of the following changes:
 
 * **Morphological change**: e.g. separation or combination of identities
 * **Change of name**: the identity changes its name
-* **Hierarchy change**: the identity changes its level within the hierarchy
+* **Change in hierarchy**: the identity changes its level within the hierarchy
