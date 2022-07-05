@@ -26,10 +26,19 @@ A certain state of the [Identity](#Identity). A change in the Identity leads to 
 Connects all the different objects of the versioned hierarchy.
 
 ### Properties
+
 #### vl:identity {#identity}
+Links a [Version](#Version) to a correspondent [Identity](#Identity).
+
 #### vl:version {#version}
+Links a [Identity](#Identity) to the [Version](#Version) its based on.
+
 #### vl:predecessor {#predecessor}
+Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a version if multiple predecessor versions exist (e.g. [Combination](#Combination).
+
 #### vl:successor {#successor}
+Links a certain [Version](#Version) to its successor Version. Can be used multiple times in a version if multiple successor versions exist (e.g. [Separation](#Separation).
+
 #### vl:startEvent {#startEvent}
 #### vl:endEvent {#endEvent}
 
