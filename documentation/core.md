@@ -17,7 +17,10 @@
 ### Classes
 
 #### vl:Identity {#Identity}
-Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. SPARQL Update) from the corresponding version.  
+Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. SPARQL Update) from the corresponding version.
+
+### vl:TerminatedIdentity {#TerminatedIdentity}
+Represents an [Identity](#Identity) that does not exist anymore. Important to have Identities that no longer exist still in the store to avoid broken links.
 
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
@@ -34,13 +37,17 @@ Links a [Version](#Version) to a correspondent [Identity](#Identity).
 Links a [Identity](#Identity) to the [Version](#Version) its based on.
 
 #### vl:predecessor {#predecessor}
-Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a version if multiple predecessor versions exist (e.g. [Combination](#Combination).
+Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a Version if multiple predecessor Versions exist (e.g. [Combination](#Combination).
 
 #### vl:successor {#successor}
-Links a certain [Version](#Version) to its successor Version. Can be used multiple times in a version if multiple successor versions exist (e.g. [Separation](#Separation).
+Links a certain [Version](#Version) to its successor Version. Can be used multiple times in a Version if multiple successor Versions exist (e.g. [Separation](#Separation).
 
 #### vl:startEvent {#startEvent}
+Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that started the Version.
+
 #### vl:endEvent {#endEvent}
+Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ended the Version.
+
 
 ## Change Event Schema
 
