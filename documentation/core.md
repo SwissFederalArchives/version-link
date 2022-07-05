@@ -13,11 +13,17 @@
 | sh | [http://www.w3.org/ns/shacl#](https://www.w3.org/TR/shacl/) | Inherited from the RDF Cube Schema for constratins. |
 
 ## Core Schema
+
 ### Classes
 
 #### vl:Identity {#Identity}
+Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. SPARQL Update) from the corresponding version.  
+
 #### vl:Version {#Version}
+A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
+
 #### vl:VersionedIdentitySet {#VersionedIdentitySet}
+Connects all the different objects of the versioned hierarchy.
 
 ### Properties
 #### vl:identity {#identity}
@@ -28,8 +34,8 @@
 #### vl:endEvent {#endEvent}
 
 ## Change Event Schema
-### Classes
 
+### Classes
 #### vl:ChangeEvent {#ChangeEvent}
 #### vl:ChangeOfName {#ChangeOfName}
 #### vl:ChangeInHierarchy {#ChangeInHierarchy}
@@ -37,13 +43,13 @@
 #### vl:Combination {#Combination}
 
 ## Relation Schema
-### Classes
 
+### Classes
 #### vl:Relation {#Relation}
 
 ## Profile Schema
-### Classes
 
+### Classes
 #### vl:Profile {#Profile}
 
 ### Properties
