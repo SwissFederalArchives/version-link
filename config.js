@@ -7,7 +7,7 @@ var respecConfig = {
     maxTocLevel: 4,
     postProcess: [jumpTo],
     github: {
-      repoURL: "https://github.com/bfh/version-link",
+      repoURL: "https://github.com/SwissFederalArchives/version-link",
       branch: "documentation", // alternative branch
     },
     editors: [{
