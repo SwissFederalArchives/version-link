@@ -17,7 +17,7 @@
 ### Classes
 
 #### vl:Identity {#Identity}
-Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to have the possibility to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. [SPARQL Update](https://www.w3.org/TR/sparql11-update/)) from the corresponding version.
+Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to have the possibility to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding version.
 
 ### vl:TerminatedIdentity {#TerminatedIdentity}
 Represents an [Identity](#Identity) that does not exist anymore. Important to still have Identities that no longer exist in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
