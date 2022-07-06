@@ -25,6 +25,25 @@ Represents an [Identity](#Identity) that does not exist anymore. Important to st
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
 
+In [[[turtle]]] syntax, an example Version might look like this:
+
+<aside class='example' title='Version example'>
+
+```turtle example
+cityv:42 a vl:Version;
+    a ex:CityVersion;
+    vl:identity city:1;
+    vl:inVersionedIdentitySet ex:csc_set;
+    schema:identifier "42";
+    schema:name "Suncity";
+    schema:isPartOf statev:1;
+    vl:predecessor cityv:40;
+    vl:predecessor cityv:41;
+    vl:successor cityv:43.
+```
+
+</aside>
+
 #### vl:VersionedIdentitySet {#VersionedIdentitySet}
 Connects all the different objects of the versioned hierarchy.
 
