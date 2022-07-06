@@ -54,7 +54,7 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ende
 ### Classes
 
 #### vl:ChangeEvent {#ChangeEvent}
-A ChangeEvent connects all the [predecessors](#predecessor) and [successors](#successor) of a specific change and has a certain change type added. In contrast to the ChangeEvent, the [Relation](#Relation) connects a single predecessor with a single successor.
+A ChangeEvent connects all the [predecessors](#predecessor) and [successors](#successor) of a specific change and has one or multiple change types added. In contrast to the ChangeEvent, the [Relation](#Relation) connects a single predecessor with a single successor.
 
 #### vl:ChangeOfName {#ChangeOfName}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).
@@ -74,17 +74,31 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination o
 ### Classes
 
 #### vl:Relation {#Relation}
-In contrast to the [ChangeEvent](#ChangeEvent), a Relation connects a single predecessor to a single successor. The reason for this class is the fact, that within a general ChangeEvent (e.g. [Combination](#Combination)), the versions involved could have different change subtypes (e.g. a Version merges into the successor (i.e. the corresponding Identity becomes a TerminatedIdentity, another Version reshapes into the successor (i.e. the corresponding Identity lives on)).
+In contrast to the [ChangeEvent](#ChangeEvent), a Relation connects a single predecessor to a single successor. The reason for this class is the fact, that within a general ChangeEvent (e.g. [Combination](#Combination)), the [Versions](#Version) involved could have different change subtypes (e.g. a Version merges into the [successor](#successor) (i.e. the corresponding Identity becomes a [TerminatedIdentity](#TerminatedIdentity), another Version reshapes into the successor (i.e. the corresponding Identity lives on)).
 
 ## Profile Schema
 
 ### Classes
+
 #### vl:Profile {#Profile}
+The Profile enables the use of different vocabularies for the generic link.version properties depending on the domain practices. 
 
 ### Properties
-#### vl:identityPredicate {#identityPredicate}
+
+#### vl:identificationPredicate {#identificationPredicate}
+Binds the identification to a [Version](#Version) or [Identity](#Identity). Allows to use an arbitrary system of identification tokens.
+
 #### vl:namePredicate {#namePredicate}
+Binds the name to a [Version](#Version) or [Identity](#Identity).
+
 #### vl:startDatePredicate {#startDatePredicate}
+Binds the start date to a [Version](#Version).
+
 #### vl:endDatePredicate {#endDatePredicate}
+Binds the end date to a [Version](#Version).
+
 #### vl:hasPartPredicate {#hasPartPredicate}
+Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentySet). Connects a higher level [Version](#Version) to a lower level Version or a higher level [Identity](#Identity) to a lower level Identity. This links are only created within Versions or Identities.
+
 #### vl:isPartOfPredicate {#isPartOfPredicate}
+Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentySet). Connects a lower level [Version](#Version) to a higher level Version or a lower level [Identity](#Identity) to a higher level Identity. This links are only created within Versions or Identities.
