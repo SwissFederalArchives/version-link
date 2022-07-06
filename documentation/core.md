@@ -98,7 +98,7 @@ Binds the start date to a [Version](#Version).
 Binds the end date to a [Version](#Version).
 
 #### vl:hasPartPredicate {#hasPartPredicate}
-Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentySet). Connects a higher level [Version](#Version) to a lower level Version or a higher level [Identity](#Identity) to a lower level Identity. This links are only created within Versions or Identities.
+Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentitySet). Connects a higher level [Version](#Version) to a lower level Version or a higher level [Identity](#Identity) to a lower level Identity. This links are only created within Versions or Identities.
 
 #### vl:isPartOfPredicate {#isPartOfPredicate}
-Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentySet). Connects a lower level [Version](#Version) to a higher level Version or a lower level [Identity](#Identity) to a higher level Identity. This links are only created within Versions or Identities.
+Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentitySet). Connects a lower level [Version](#Version) to a higher level Version or a lower level [Identity](#Identity) to a higher level Identity. This links are only created within Versions or Identities.
