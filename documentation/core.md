@@ -72,7 +72,9 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination o
 ## Relation Schema
 
 ### Classes
+
 #### vl:Relation {#Relation}
+In contrast to the [ChangeEvent](#ChangeEvent), a Relation connects a single predecessor to a single successor. The reason for this class is the fact, that within a general ChangeEvent (e.g. [Combination](#Combination)), the versions involved could have different change subtypes (e.g. a Version merges into the successor (i.e. the corresponding Identity becomes a TerminatedIdentity, another Version reshapes into the successor (i.e. the corresponding Identity lives on)).
 
 ## Profile Schema
 
