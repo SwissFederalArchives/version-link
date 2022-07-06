@@ -81,7 +81,23 @@ In contrast to the [ChangeEvent](#ChangeEvent), a Relation connects a single pre
 ### Classes
 
 #### vl:Profile {#Profile}
-The Profile enables the use of different vocabularies for the generic link.version properties depending on the domain practices. 
+The Profile enables the use of different vocabularies for the generic link.version properties depending on the domain practices.
+
+In [[[turtle]]] syntax, an example Profile might look like this:
+
+<aside class='example' title='Profile example'>
+
+```turtle example
+ex:vl_schemaorg a vl:Profile;
+    vl:identificationPredicate schema:identifier;
+    vl:namePredicate schema:name;
+    vl:startDatePredicate schema:startDate;
+    vl:endDatePredicate schema:endDate;
+    vl:hasPartPredicate schema:hasPart;
+    vl:isPartOfPredicate schema:isPartOf.
+```
+
+</aside>
 
 ### Properties
 
