@@ -17,10 +17,10 @@
 ### Classes
 
 #### vl:Identity {#Identity}
-Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. SPARQL Update) from the corresponding version.
+Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to have the possibility to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. [SPARQL Update](https://www.w3.org/TR/sparql11-update/)) from the corresponding version.
 
 ### vl:TerminatedIdentity {#TerminatedIdentity}
-Represents an [Identity](#Identity) that does not exist anymore. Important to have Identities that no longer exist still in the store to avoid broken links.
+Represents an [Identity](#Identity) that does not exist anymore. Important to still have Identities that no longer exist in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
 
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
@@ -31,10 +31,10 @@ Connects all the different objects of the versioned hierarchy.
 ### Properties
 
 #### vl:identity {#identity}
-Links a [Version](#Version) to a correspondent [Identity](#Identity).
+Links a [Version](#Version) to the corresponding [Identity](#Identity).
 
 #### vl:version {#version}
-Links a [Identity](#Identity) to the [Version](#Version) its based on.
+Links a [Identity](#Identity) to the [Version](#Version) its currently based on.
 
 #### vl:predecessor {#predecessor}
 Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a Version if multiple predecessor Versions exist (e.g. [Combination](#Combination).
