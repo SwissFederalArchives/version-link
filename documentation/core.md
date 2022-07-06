@@ -52,11 +52,22 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ende
 ## Change Event Schema
 
 ### Classes
+
 #### vl:ChangeEvent {#ChangeEvent}
+A ChangeEvent connects all the [predecessors](#predecessor) and [successors](#successor) of a specific change and has a certain change type added. In contrast to the ChangeEvent, the [Relation](#Relation) connects a single predecessor with a single successor.
+
 #### vl:ChangeOfName {#ChangeOfName}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).
+
 #### vl:ChangeInHierarchy {#ChangeInHierarchy}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change in hierarchy (level within the hierarchy) of the corresponding [Identity](#Identity).
+
 #### vl:Separation {#Separation}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a separation of the corresponding [Identity](#Identity) into multiple Identities.
+
 #### vl:Combination {#Combination}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination of the corresponding [Identities](#Identity) into a single Identity.
+
 
 ## Relation Schema
 
@@ -69,7 +80,7 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ende
 #### vl:Profile {#Profile}
 
 ### Properties
-#### vl:identityPredicate {#identiyPredicate}
+#### vl:identityPredicate {#identityPredicate}
 #### vl:namePredicate {#namePredicate}
 #### vl:startDatePredicate {#startDatePredicate}
 #### vl:endDatePredicate {#endDatePredicate}
