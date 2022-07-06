@@ -1,10 +1,8 @@
 # Scope
-This schema does specify a structure to handle versioning of the identity of concepts in linked data. In contrast to the versioning of datasets, the schema is specialized on the morphologic (change of form) of concepts and their change in time. That are by example the case of combining, fusining of two concepts e.g. territories, or budget entries, or the moving inside a hierarchical structure.
+This schema does specify a structure to handle different **versions** of **identities** (concepts) within hierarchies. In contrast to the versioning of datasets, the schema is specialized on the morphology of identities and its change in time. 
 
-Therefor does this schema focus on the identity of concepts in a closed set and explicitely associated hierarchies. Explicitely are the following aspects are taken into account:
+A new version of a identity is the result of one of the following changes:
 
-* Existence: Changes of concepts in time, including transformation (morphological change) inside the set of versioned concepts.
-
-* Name: Name changes of concepts which belong to the set of versioned concepts.
-
-* Position in a hierarchy: Changes in one or multiple hierarchies associated to the versioned concepts.
+* **Morphological change**: e.g. separation or combination of identities
+* **Change of name**: the identity changes its name
+* **Change in hierarchy**: the identity changes its level within the hierarchy
