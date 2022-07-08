@@ -109,6 +109,8 @@ city:2 a vl:Identity;
 
 ## Advanced Example {#AdvancedExample}
 
+### City Versions
+
 <aside class='example' title='First Version of first City'>
 
 ```turtle example
