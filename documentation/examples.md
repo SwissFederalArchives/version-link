@@ -191,7 +191,16 @@ cityv:41 a vl:Version;
     schema:identifier "41";
     schema:name "Cloudcity";
     schema:isPartOf statev:1;
-    vl:successor cityv:44.
+    vl:successor cityv:44;
+    vl:startDate "1900-01-01"^^xsd:date;
+    vl:endDate "2022-12-31"^^xsd:date;
+    vl:startEvent cityv:changeevent\/4;
+    vl:endEvent cityv:changeevent\/3.
+    
+cityv:changeevent\/4 a vl:ChangeEvent;
+    a vl:InitialRecording;
+    vl:inVersionedIdentitySet ex:csc_set;
+    vl:successor cityv:41.
 ```
 
 </aside>
@@ -207,7 +216,9 @@ cityv:44 a vl:Version;
     schema:name "Cloudcity";
     schema:isPartOf statev:1;
     vl:predecessor cityv:41;  
-    vl:predecessor cityv:43.
+    vl:predecessor cityv:43;
+    vl:startDate "1923-01-01"^^xsd:date;
+    vl:startEvent cityv:changeevent\/3;
 ```
 
 </aside>
