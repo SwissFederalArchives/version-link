@@ -1,6 +1,6 @@
 # Examples
 
-The following sections shows two workings examples in [[[turtle]]] syntax of a [VersionedIdentitySet](#VersionedIdentitySet) hierarchy. The first [minimal example](#MinimalExample) has only the very fundamental and mandatory parts whereas the advanced example has all the "bells and whistles" defined in version.link. Both examples shall be comprised of three hierarchy levels:
+The following sections shows two workings examples in [[[turtle]]] syntax of a [VersionedIdentitySet](#VersionedIdentitySet) hierarchy. The first [minimal example](#MinimalExample) has only the very fundamental and mandatory parts whereas the [advanced example]{#AdvancedExample} has all the "bells and whistles" defined in version.link. Both examples shall be comprised of three hierarchy levels:
 
 * **Countries**
 * **States**
