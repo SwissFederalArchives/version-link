@@ -73,7 +73,10 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ende
 ### Classes
 
 #### vl:ChangeEvent {#ChangeEvent}
-A ChangeEvent connects all the [predecessors](#predecessor) and [successors](#successor) of a specific change and has one or multiple change types added. In contrast to the ChangeEvent, the [Relation](#Relation) connects a single predecessor with a single successor.
+A ChangeEvent connects all the [predecessors](#predecessor) and [successors](#successor) of a specific change and has one or multiple change types added.
+
+It is also possible to add multiple ChangeEvents with a single predecessor to a single successor. This allows to give relations between [Versions](#Version) a specific class or type.
+
 
 #### vl:ChangeOfName {#ChangeOfName}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).
@@ -87,13 +90,6 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a separation of
 #### vl:Combination {#Combination}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination of the corresponding [Identities](#Identity) into a single Identity.
 
-
-## Relation Schema
-
-### Classes
-
-#### vl:Relation {#Relation}
-In contrast to the [ChangeEvent](#ChangeEvent), a Relation connects a single predecessor to a single successor. The reason for this class is the fact, that within a general ChangeEvent (e.g. [Combination](#Combination)), the [Versions](#Version) involved could have different change subtypes (e.g. a Version merges into the [successor](#successor) (i.e. the corresponding Identity becomes a [TerminatedIdentity](#TerminatedIdentity), another Version reshapes into the successor (i.e. the corresponding Identity lives on)).
 
 ## Profile Schema
 
