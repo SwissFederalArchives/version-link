@@ -76,7 +76,7 @@ Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeE
 ### Classes
 
 #### vl:ChangeEvent {#ChangeEvent}
-A ChangeEvent connects different [predecessors](#predecessor) and [successors](#successor) of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types.
+A ChangeEvent connects different [predecessors](#predecessor) and [successors](#successor) of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.
 
 ### Change Type Classes
 
@@ -111,6 +111,7 @@ In [[[turtle]]] syntax, an example Profile might look like this:
 ex:vl_schemaorg a vl:Profile;
     vl:identificationPredicate schema:identifier;
     vl:namePredicate schema:name;
+    vl:datePredicate schema:date;
     vl:startDatePredicate schema:startDate;
     vl:endDatePredicate schema:endDate;
     vl:hasPartPredicate schema:hasPart;
@@ -126,6 +127,9 @@ Binds the identification to a [Version](#Version) or [Identity](#Identity). Allo
 
 #### vl:namePredicate {#namePredicate}
 Binds the name to a [Version](#Version) or [Identity](#Identity).
+
+#### vl:datePredicate {#datePredicate}
+Binds the date to a [ChangeEvent](#ChangeEvent).
 
 #### vl:startDatePredicate {#startDatePredicate}
 Binds the start date to a [Version](#Version).
