@@ -17,7 +17,7 @@
 ### Classes
 
 #### vl:Identity {#Identity}
-Represents the identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier SPARQL queries as long as the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions.
+Represents the Identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier [[[sparql11-query]]] queries as long as the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions.
 
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
