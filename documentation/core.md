@@ -17,13 +17,13 @@
 ### Classes
 
 #### vl:Identity {#Identity}
-Represents the current version of an identity (concept). The reason to not only have different [Versions](#Version) but also a current Identity is the idea to have the possibility to build easy SPARQL queries as long as the Identity history is not relevant. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding version.
-
-#### vl:TerminatedIdentity {#TerminatedIdentity}
-Represents an [Identity](#Identity) that does not exist anymore. Important to still have Identities that no longer exist in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
+Represents the identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier SPARQL queries as long as the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions.
 
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
+
+#### vl:Deprecated {#Deprecated}
+Added to [Versions](#Version) and [Identities](#Identity) to signal that they are deprecated. This class is especially useful, if Identities and Versions do not use start- and stop dates. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
 
 In [[[turtle]]] syntax, an example Version might look like this:
 
@@ -45,7 +45,7 @@ cityv:42 a vl:Version;
 </aside>
 
 #### vl:VersionedIdentitySet {#VersionedIdentitySet}
-Connects all the different objects of the versioned hierarchy.
+Represents the class of all the different objects of the versioned hierarchy.
 
 ### Properties
 
@@ -67,16 +67,21 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that star
 #### vl:endEvent {#endEvent}
 Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ended the Version.
 
+#### vl:inVersionedIdentitySet {#inVersionedIdentitySet}
+Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeEvent) to a specific [VersionedIdentitySet](#VersionedIdentitySet)
+
 
 ## Change Event Schema
 
 ### Classes
 
 #### vl:ChangeEvent {#ChangeEvent}
-A ChangeEvent connects all the [predecessors](#predecessor) and [successors](#successor) of a specific change and has one or multiple change types added.
+A ChangeEvent connects different [predecessors](#predecessor) and [successors](#successor) of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types.
 
-It is also possible to add multiple ChangeEvents with a single predecessor to a single successor. This allows to give relations between [Versions](#Version) a specific class or type.
+### Change Type Classes
 
+#### vl:InitialRecording
+Change type of a [ChangeEvent](#ChangeEvent). To create a [Version](#Version) without any [predecessors](#predecessor).
 
 #### vl:ChangeOfName {#ChangeOfName}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).

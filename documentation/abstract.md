@@ -1,5 +1,5 @@
 # Scope
-This schema does specify a structure to handle different **versions** of **identities** (concepts) within hierarchies. In contrast to the versioning of datasets, the schema is specialized on the morphology of identities and its change in time. 
+The **version.link schema** does specify a structure to handle different **versions** of **identities** (concepts) within hierarchies. In contrast to the versioning of datasets, the schema is specialized on the morphology of identities and its changes in time. 
 
 A new version of a identity is the result of one of the following changes:
 
