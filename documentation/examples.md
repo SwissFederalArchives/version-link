@@ -82,7 +82,8 @@ cityv:44 a vl:Version;
 <aside class='example' title='Second Version of second City - after merge'>
 
 ```turtle example
-city:1 a vl:TerminatedIdentity;
+city:1 a vl:Identity;
+    a vl:Deprecated;
     a ex:City;
     vl:version cityv:43;
     vl:inVersionedIdentitySet ex:csc_set;
@@ -122,18 +123,20 @@ cityv:42 a vl:Version;
     schema:name "Suncity";
     schema:isPartOf statev:1;
     vl:successor cityv:43;
-    vl:startDate "1900-01-01"^^xsd:date;
-    vl:endDate "2021-12-31"^^xsd:date;
+    vl:startDate "1900-01-01T00:00:00"^^xsd:dateTime;
+    vl:endDate "2022-01-01T00:00:00""^^xsd:dateTime;
     vl:startEvent cityv:changeevent\/1;
     vl:endEvent cityv:changeevent\/2.
     
 cityv:changeevent\/1 a vl:ChangeEvent;
     a vl:InitialRecording;
+    vl:date "1900-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet ex:csc_set;
     vl:successor cityv:42.
     
 cityv:changeevent\/2 a vl:ChangeEvent;
     a vl:ChangeOfName;
+    vl:date "2022-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet ex:csc_set;
     vl:predecessor cityv:42;
     vl:successor cityv:43
@@ -154,30 +157,25 @@ cityv:43 a vl:Version;
     schema:isPartOf statev:1;
     vl:predecessor cityv:42;
     vl:successor cityv:44;
-    vl:startDate "2022-01-01"^^xsd:date;
-    vl:endDate "2022-12-31"^^xsd:date;
+    vl:startDate "2022-01-01T00:00:00"^^xsd:dateTime;
+    vl:endDate "2023-01-01T00:00:00"^^xsd:dateTime;
     vl:startEvent cityv:changeevent\/2;
-    vl:endEvent cityv:changeevent\/3.
+    vl:endEvent cityv:changeevent\/3;
+    vl:endEvent cityv:changeevent\/4.
     
 cityv:changeevent\/3 a vl:ChangeEvent;
     a vl:Combination;
+    vl:date "2023-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet ex:csc_set;
     vl:predecessor cityv:41;
-    vl:predecessor cityv:43;
-    vl:successor cityv:44;
-    vl:relation cityv:relation\/1;
-    vl:relation cityv:relation\/2.
-    
-cityv:relation\/1 a vl:Relation;
-    a vl:Merge;
-    vl:inVersionedIdentitySet ex:csc_set;
     vl:predecessor cityv:43;
     vl:successor cityv:44.
 
-cityv:relation\/2 a vl:Relation;
-    a vl:Reshape;
+cityv:changeevent\/4 a vl:ChangeEvent;
+    a vl:Merge;
+    vl:date "2023-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet ex:csc_set;
-    vl:predecessor cityv:41;
+    vl:predecessor cityv:43;
     vl:successor cityv:44.
 ```
 
@@ -194,15 +192,24 @@ cityv:41 a vl:Version;
     schema:name "Cloudcity";
     schema:isPartOf statev:1;
     vl:successor cityv:44;
-    vl:startDate "1900-01-01"^^xsd:date;
-    vl:endDate "2022-12-31"^^xsd:date;
-    vl:startEvent cityv:changeevent\/4;
-    vl:endEvent cityv:changeevent\/3.
+    vl:startDate "1900-01-01T00:00:00"^^xsd:dateTime;
+    vl:endDate "2023-01-01T00:00:00"^^xsd:dateTime;
+    vl:startEvent cityv:changeevent\/6;
+    vl:endEvent cityv:changeevent\/3;
+    vl:endEvent cityv:changeevent\/5.
     
-cityv:changeevent\/4 a vl:ChangeEvent;
+cityv:changeevent\/6 a vl:ChangeEvent;
     a vl:InitialRecording;
+    vl:date "1900-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet ex:csc_set;
     vl:successor cityv:41.
+
+cityv:changeevent\/5 a vl:ChangeEvent;
+    a vl:Reshape;
+    vl:date "2023-01-01T00:00:00"^^xsd:dateTime;
+    vl:inVersionedIdentitySet ex:csc_set;
+    vl:predecessor cityv:41;
+    vl:successor cityv:44.
 ```
 
 </aside>
@@ -219,8 +226,10 @@ cityv:44 a vl:Version;
     schema:isPartOf statev:1;
     vl:predecessor cityv:41;  
     vl:predecessor cityv:43;
-    vl:startDate "1923-01-01"^^xsd:date;
+    vl:startDate "2023-01-01T00:00:00"^^xsd:dateTime;
     vl:startEvent cityv:changeevent\/3;
+    vl:startEvent cityv:changeevent\/4;
+    vl:startEvent cityv:changeevent\/5.
 ```
 
 </aside>
@@ -230,13 +239,16 @@ cityv:44 a vl:Version;
 <aside class='example' title='Second Version of second City - after merge'>
 
 ```turtle example
-city:1 a vl:TerminatedIdentity;
+city:1 a vl:Identity;
+    a vl:Deprecated;
     a ex:City;
     vl:version cityv:43;
     vl:inVersionedIdentitySet ex:csc_set;
     schema:identifier "1";
     schema:name "Shadowcity";
     schema:isPartOf state:1;
+    vl:startDate "1900-01-01T00:00:00"^^xsd:dateTime;
+    vl:endDate "2023-01-01T00:00:00"^^xsd:dateTime.
 ```
 
 </aside>
@@ -251,6 +263,7 @@ city:2 a vl:Identity;
     schema:identifier "2";
     schema:name "Cloudcity";
     schema:isPartOf state:1;
+    vl:startDate "1900-01-01T00:00:00"^^xsd:dateTime.
 ```
 
 </aside>
