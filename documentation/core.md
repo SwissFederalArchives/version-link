@@ -106,6 +106,7 @@ The Profile enables the use of different vocabularies for the generic properties
 In [[[turtle]]] syntax, an example Profile might look like this:
 
 <aside class='example' title='Schema.org Profile example'>
+
 ```turtle example
 vl:Profile_SchemaOrg a vl:Profile;
     vl:identifierPredicate schema:identifier;
@@ -116,9 +117,11 @@ vl:Profile_SchemaOrg a vl:Profile;
     vl:hasPartPredicate schema:hasPart;
     vl:isPartOfPredicate schema:isPartOf.
 ```
+
 </aside>
 
 <aside class='example' title='SKOS Profile example'>
+
 ```turtle example
 vl:Profile_SKOS a vl:Profile;
     vl:identifierPredicate skos:notation;
@@ -129,6 +132,7 @@ vl:Profile_SKOS a vl:Profile;
     vl:hasPartPredicate skos:narrower;
     vl:isPartOfPredicate skos:broader.
 ```
+
 </aside>
 
 
