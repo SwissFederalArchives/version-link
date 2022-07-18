@@ -9,8 +9,8 @@
 ### External
 | PREFIX | IRI | Description |
 | --- | --- | --- |
-| schema | [http://schema.org/](http://schema.org) | To describe basic properties. |
-| sh | [http://www.w3.org/ns/shacl#](https://www.w3.org/TR/shacl/) | Inherited from the RDF Cube Schema for constratins. |
+| schema | [http://schema.org/](http://schema.org) | Used for examples and the profile. |
+| skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for examples and the profile. |
 
 ## Core Schema
 
