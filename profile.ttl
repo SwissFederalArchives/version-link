@@ -1,0 +1,24 @@
+@prefix vl: <https://version.link/>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+
+# A version.link profile for schema.org concepts.
+
+vl:Profile_SchemaOrg a vl:Profile;
+    vl:identifierPredicate schema:identifier;
+    vl:namePredicate schema:name;
+    vl:datePredicate schema:date;
+    vl:startDatePredicate schema:startDate;
+    vl:endDatePredicate schema:endDate;
+    vl:hasPartPredicate schema:hasPart;
+    vl:isPartOfPredicate schema:isPartOf.
+
+# A version.link profile for SKOS concepts.
+vl:Profile_SKOS a vl:Profile;
+    vl:identifierPredicate skos:notation;
+    vl:namePredicate skos:prefLabel;
+    vl:datePredicate dcterms:date;
+# missing    vl:startDatePredicate ;
+# missing    vl:endDatePredicate ;
+    vl:hasPartPredicate skos:narrower;
+    vl:isPartOfPredicate skos:broader.

@@ -101,15 +101,14 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination o
 ### Classes
 
 #### vl:Profile {#Profile}
-The Profile enables the use of different vocabularies for the generic link.version properties depending on the domain practices.
+The Profile enables the use of different vocabularies for the generic properties depending on the domain practices. By setting this profile it is possible to use the version.link SPARQL queries for different ontologies. This ontology provides some common mappings which can be taken into account as guidelines.
 
 In [[[turtle]]] syntax, an example Profile might look like this:
 
-<aside class='example' title='Profile example'>
-
+<aside class='example' title='Schema.org Profile example'>
 ```turtle example
-ex:vl_schemaorg a vl:Profile;
-    vl:identificationPredicate schema:identifier;
+vl:Profile_SchemaOrg a vl:Profile;
+    vl:identifierPredicate schema:identifier;
     vl:namePredicate schema:name;
     vl:datePredicate schema:date;
     vl:startDatePredicate schema:startDate;
@@ -117,12 +116,25 @@ ex:vl_schemaorg a vl:Profile;
     vl:hasPartPredicate schema:hasPart;
     vl:isPartOfPredicate schema:isPartOf.
 ```
-
 </aside>
+
+<aside class='example' title='SKOS Profile example'>
+```turtle example
+vl:Profile_SKOS a vl:Profile;
+    vl:identifierPredicate skos:notation;
+    vl:namePredicate skos:prefLabel;
+    vl:datePredicate dcterms:date;
+# missing    vl:startDatePredicate ;
+# missing    vl:endDatePredicate ;
+    vl:hasPartPredicate skos:narrower;
+    vl:isPartOfPredicate skos:broader.
+```
+</aside>
+
 
 ### Properties
 
-#### vl:identificationPredicate {#identificationPredicate}
+#### vl:identifierPredicate {#identifierPredicate}
 Binds the identification to a [Version](#Version) or [Identity](#Identity). Allows to use an arbitrary system of identification tokens.
 
 #### vl:namePredicate {#namePredicate}
