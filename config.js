@@ -8,7 +8,7 @@ var respecConfig = {
     postProcess: [jumpTo],
     github: {
       repoURL: "https://github.com/SwissFederalArchives/version-link",
-      branch: "documentation", // alternative branch
+      branch: "main", // alternative branch
     },
     editors: [{
       name: "Benedikt Hitz-Gamper",
