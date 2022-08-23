@@ -87,7 +87,7 @@ Change type of a [ChangeEvent](#ChangeEvent). To create a [Version](#Version) wi
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).
 
 #### vl:ChangeInHierarchy {#ChangeInHierarchy}
-Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change in hierarchy (level within the hierarchy) of the corresponding [Identity](#Identity).
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change in hierarchy: [Version](#Version) changes level within the hierarchy or other Versions in upper or lower hierarchy change with effects on the Version present.
 
 #### vl:Separation {#Separation}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a separation of the corresponding [Identity](#Identity) into multiple Identities.
