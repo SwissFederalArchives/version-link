@@ -22,27 +22,26 @@ Represents the Identity (concept). The reason to not only have different [Versio
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
 
-#### vl:Deprecated {#Deprecated}
-Added to [Versions](#Version) and [Identities](#Identity) to signal that they are deprecated. This class is especially useful, if Identities and Versions do not use start- and stop dates. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
-
 In [[[turtle]]] syntax, an example Version might look like this:
 
 <aside class='example' title='Version example'>
 
 ```turtle example
-cityv:42 a vl:Version;
-    a ex:CityVersion;
-    vl:identity city:1;
-    vl:inVersionedIdentitySet ex:csc_set;
-    schema:identifier "42";
-    schema:name "Suncity";
-    schema:isPartOf statev:1;
-    vl:predecessor cityv:40;
-    vl:predecessor cityv:41;
-    vl:successor cityv:43.
+miv:13233 a vl:Version;
+    a as:MunicipalityVersion;
+    vl:identity mi:3871;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    schema:identifier "13233";
+    schema:name "Klosters-Serneus";
+    schema:isPartOf dtv:10175;
+    vl:predecessor miv:11299;
+    vl:successor miv:14310.
 ```
 
 </aside>
+    
+#### vl:Deprecated {#Deprecated}
+Added to [Versions](#Version) and [Identities](#Identity) to signal that they are deprecated. This class is especially useful, if Identities and Versions do not use start- and stop dates. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
 
 #### vl:VersionedIdentitySet {#VersionedIdentitySet}
 Represents the class of all the different objects of the versioned hierarchy.
