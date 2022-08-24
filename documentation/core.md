@@ -12,6 +12,14 @@
 | schema | [http://schema.org/](http://schema.org) | Used for examples and the profile. |
 | skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for examples and the profile. |
 
+## Introduction to the schemata of version.link
+
+version.link consists of three schemata:
+
+* Core Schema: Defines the fundamental principle of [Identities](#Identity) their [Versions](#Version) and the current [status](#Deprecated) of these elements. Furthermore, the [VersionedIdentitySet](#VersionedIdentitySet) as a super set of the Identities and Versions is introduced.
+* Change Event Schema: The ChangeEvent as element that links different [Versions](#Version) together is introduced with the corresponding change types.
+* Profile Schema: version.link allows to define different profiles and therefore is able to tanke into account different alredy existing vocabularies to describe the [Identities](#Identity), [Versions](#Version) and [ChangeEvents](#ChangeEvent).
+
 ## Core Schema
 
 ### Classes
