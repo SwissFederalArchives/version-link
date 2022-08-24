@@ -5,12 +5,20 @@
 | PREFIX | IRI | Description |
 | --- | --- | --- |
 | `vl` | `https://version.link/` | version.link|
+| schema | [http://schema.org/](http://schema.org) | Used for the profile. |
+| skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for the profile. |
+| dcterm | [http://purl.org/dc/terms/](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) | Used for the profile. |
+| xsd | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) | Used for string literal types. |
 
-### External
+### For the examples
 | PREFIX | IRI | Description |
 | --- | --- | --- |
-| schema | [http://schema.org/](http://schema.org) | Used for examples and the profile. |
-| skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for examples and the profile. |
+| as | [https://schema.ld.admin.ch/](https://schema.ld.admin.ch/) | |
+| mi | https://ld.admin.ch/municipality/ | |
+| miv | https://ld.admin.ch/municipality/version/ | |
+| dt | https://ld.admin.ch/dt/ | |
+| dtv | https://ld.admin.ch/dt/version/ | |
+| mce | https://ld.admin.ch/municipality/changeevent/ | |
 
 ## Introduction to the schemata of version.link
 
