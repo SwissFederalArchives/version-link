@@ -187,3 +187,14 @@ Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#
 
 #### vl:isPartOfPredicate {#isPartOfPredicate}
 Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#VersionedIdentitySet). Connects a lower level [Version](#Version) to a higher level Version or a lower level [Identity](#Identity) to a higher level Identity. This links are only created within Versions or Identities.
+
+## Linking Across Hierarchy Boundaries
+    
+For linking Versions of one hierarchy level to Versions of another hierarchy level (municipalities link to their district), different possibilities exist:
+    
+    * Linking only from lower hierarchy levels to the upper level(s)
+    * Linking only from upper hierarchy levels to the lower level(s)
+    * Linking in both directions
+    
+From the point of view of a SPARQL query, these three variants are more or less identical and do not exhibit any particular advantages. If there are lots of Versions in a lower level from one version in an upper hierarchy level, it may be advantegous to only link from the lower to the uper level because of clarity in dereferencing the upper level (otherwise it is possible that the upper level has a myriad of [hasPartPredicate](#hasPartPredicate).
+    
