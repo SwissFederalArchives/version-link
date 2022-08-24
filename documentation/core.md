@@ -4,7 +4,7 @@
 ### version.link
 | PREFIX | IRI | Description |
 | --- | --- | --- |
-| `vl` | `https://version.link/` | version.link|
+| vl | https://version.link/ | version.link|
 | schema | [http://schema.org/](http://schema.org) | Used for the profile. |
 | skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for the profile. |
 | dcterm | [http://purl.org/dc/terms/](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) | Used for the profile. |
