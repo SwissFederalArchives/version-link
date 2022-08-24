@@ -192,9 +192,13 @@ Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#
     
 For linking Versions of one hierarchy level to Versions of another hierarchy level (municipalities link to their district), different possibilities exist:
     
-    * Linking only from lower hierarchy levels to the upper level(s)
-    * Linking only from upper hierarchy levels to the lower level(s)
-    * Linking in both directions
+* Linking only from lower hierarchy levels to the upper level(s)
+* Linking only from upper hierarchy levels to the lower level(s)
+* Linking in both directions
     
-From the point of view of a SPARQL query, these three variants are more or less identical and do not exhibit any particular advantages. If there are lots of Versions in a lower level from one version in an upper hierarchy level, it may be advantegous to only link from the lower to the uper level because of clarity in dereferencing the upper level (otherwise it is possible that the upper level has a myriad of [hasPartPredicate](#hasPartPredicate).
+From the point of view of a SPARQL query, these three variants are more or less identical and do not exhibit any particular advantages. If there are lots of Versions in a lower level belonging to one version in an upper hierarchy level, it may be advantegous to only link from the lower to the uper level because of clarity in dereferencing the upper level (otherwise it is possible that the upper level has a myriad of [hasPartPredicate](#hasPartPredicate) entries).
     
+It is important to decide how to handle changes in one hierarchy level in the linked Versions of other hierarchy levels. For example, if a district changes, a new district Version will be created. For the municipalitiy Versions belonging to this district, two possibilities are possible:
+    
+* The affected municipality Versions have another isPartOfPredicate added pointing to the new district Version. To decide which of both (or even more) isPartOfPredicate relations is the current one, the linked district Versions could be examined for a Deprecated class or an endDatePredicate.
+* The affected municipality Versions get new successor Versions through a ChangeEvent with ChangeInHierarchy and therefore only have one isPartOfPredicate and this is ensured to be the current one.
