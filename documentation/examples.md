@@ -59,4 +59,75 @@ mi:3871 a vl:Identity;
 
 ## Advanced Example {#AdvancedExample}
 
+### Municipality Versions
 
+<aside class='example' title='2 Versions of Klosters'>
+
+```turtle example
+miv:11299 a vl:Version;
+    a as:MunicipalityVersion;
+    vl:identity mi:3871;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    schema:identifier "11299";
+    schema:name "Klosters";
+    schema:isPartOf dtv:10175;
+    vl:startDate "1960-01-01T00:00:00"^^xsd:dateTime;
+    vl:startEvent mce:1000_11299;
+    vl:endDate "1973-12-31T24:00:00"^^xsd:dateTime;
+    vl:endEvent mce:1048;
+    vl:successor miv:13233.
+
+miv:13233 a vl:Version;
+    a as:MunicipalityVersion;
+    vl:identity mi:3871;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    schema:identifier "13233";
+    schema:name "Klosters-Serneus";
+    schema:isPartOf dtv:10175;
+    vl:startDate "1974-01-01T00:00:00"^^xsd:dateTime;
+    vl:startEvent mce:1048;
+    vl:endDate "2000-12-31T24:00:00"^^xsd:dateTime;
+    vl:endEvent mce:2110;
+    vl:successor miv:14310.
+```
+
+</aside>
+    
+### Municipality ChangeEvents
+
+<aside class='example' title='ChangeEvents of Klosters'>
+
+```turtle example
+mce:1000_11299 a vl:ChangeEvent;
+    a as:MunicipalityChangeEvent;
+    a vl:InitialRecording;
+    vl:date "1960-01-01T00:00:00"^^xsd:dateTime;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    vl:successor miv:11299.
+
+mce:1048 a vl:ChangeEvent;
+    a as:MunicipalityChangeEvent;
+    a vl:ChangeOfName;
+    vl:date "1974-01-01T00:00:00"^^xsd:dateTime;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    vl:predecessor miv:11299;
+    vl:successor miv:13233.
+```
+
+</aside>
+    
+### Municipality Identity
+
+<aside class='example' title='The Identity of Klosters'>
+
+```turtle example
+mi:3871 a vl:Identity;
+    a as:PoliticalMunicipality;
+    vl:version miv:16610;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    schema:identifier "3871";
+    schema:name "Klosters";
+    schema:isPartOf dt:1849.
+```
+
+</aside>
