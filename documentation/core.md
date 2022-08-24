@@ -16,11 +16,11 @@
 
 version.link consists of three schemata:
 
-* Core Schema: Defines the fundamental principle of [Identities](#Identity) their [Versions](#Version) and the current [status](#Deprecated) of these elements. Furthermore, the [VersionedIdentitySet](#VersionedIdentitySet) as a super set of the Identities and Versions is introduced.
-* Change Event Schema: The ChangeEvent as element that links different [Versions](#Version) together is introduced with the corresponding change types.
-* Profile Schema: version.link allows to define different profiles and therefore is able to tanke into account different alredy existing vocabularies to describe the [Identities](#Identity), [Versions](#Version) and [ChangeEvents](#ChangeEvent).
+* [**Core Schema**](#Core_Schema): Defines the fundamental principle of [Identities](#Identity) their [Versions](#Version) and the current [status](#Deprecated) of these elements. Furthermore, the [VersionedIdentitySet](#VersionedIdentitySet) as a super set of the Identities and Versions is introduced.
+* [**Change Event Schema**](#Change_Event_Schema): The ChangeEvent as element that links different [Versions](#Version) together is introduced with the corresponding change types.
+* [**Profile Schema**](#Profile_Schema): version.link allows to define different profiles and therefore is able to tanke into account different alredy existing vocabularies to describe the [Identities](#Identity), [Versions](#Version) and [ChangeEvents](#ChangeEvent).
 
-## Core Schema
+## Core Schema {#Core_Schema}
 
 ### Classes
 
@@ -92,7 +92,7 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ende
 Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeEvent) to a specific [VersionedIdentitySet](#VersionedIdentitySet)
 
 
-## Change Event Schema
+## Change Event Schema {#Change_Event_Schema}
 
 ### Classes
 
@@ -117,7 +117,7 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a separation of
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination of the corresponding [Identities](#Identity) into a single Identity.
 
 
-## Profile Schema
+## Profile Schema {#Profile_Schema}
 
 ### Classes
 
