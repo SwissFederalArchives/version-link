@@ -19,10 +19,24 @@
 #### vl:Identity {#Identity}
 Represents the Identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier [[[sparql11-query]]] queries as long as the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions.
 
+In [[[turtle]]] syntax, an example Version might look like this:
+
+<aside class='example' title='Identity example'>
+
+```turtle example
+mi:3871 a vl:Identity;
+    a as:PoliticalMunicipality;
+    vl:version miv:16610;
+    vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
+    schema:identifier "3871";
+    schema:name "Klosters";
+    schema:isPartOf dt:1849.
+```
+
+</aside>
+
 #### vl:Version {#Version}
 A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
-
-In [[[turtle]]] syntax, an example Version might look like this:
 
 <aside class='example' title='Version example'>
 
