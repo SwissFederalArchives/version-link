@@ -2,6 +2,7 @@
 The **version.link schema** does specify a structure to handle different **versions** of **identities** (concepts) within **hierarchies**. In contrast to the versioning of datasets, the schema is specialized on the morphology of identities and its changes in time. The basic idea is to to model identities (e.g. a municipality) that are represented in their current state but also as evolving versions that show the development over time of the different identities. The reason for not only having successing versions but also a current identity is the idea to make it possible to link to stable identity IDs that do not change with every version and also to hide the complexity of a evolving identity if the user has no interest in the development but only in the current state of the identity. The following image tries to illustrate the connections between versions, identities and change events:
 
 ![Basic version.link schema structure](./img/basics.svg)
+<img src="./img/basics.svg" alt="Basic version.link schema structure" style="text-align:center">
 
 A new version of a identity is the result of one of the following changes:
 
