@@ -102,6 +102,10 @@ Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeE
 
 ## Change Event Schema {#Change_Event_Schema}
 
+The succession of different [Versions](#Version) of an [Identity](#Identity) can be constructed either with direct linking of the Versions with [successor](#successor) and [predecessor](#predecessor) or by inserting a [ChangeEvent](#ChangeEvent) that enables to state more precisely the kind of ChangeEvent. The following picture illustrates this two variants:
+
+![Successor Variants](./img/successor_variants.svg)
+
 ### Classes
 
 #### vl:ChangeEvent {#ChangeEvent}
