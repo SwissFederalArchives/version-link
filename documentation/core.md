@@ -16,8 +16,8 @@
 | as | [https://schema.ld.admin.ch/](https://schema.ld.admin.ch/) | |
 | mi | https://ld.admin.ch/municipality/ | |
 | miv | https://ld.admin.ch/municipality/version/ | |
-| dt | https://ld.admin.ch/dt/ | |
-| dtv | https://ld.admin.ch/dt/version/ | |
+| dt | https://ld.admin.ch/district/ | |
+| dtv | https://ld.admin.ch/district/version/ | |
 | mce | https://ld.admin.ch/municipality/changeevent/ | |
 
 ## Introduction to the schemata of version.link
