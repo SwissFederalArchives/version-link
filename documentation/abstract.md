@@ -1,5 +1,12 @@
 # Scope
-The **version.link schema** does specify a structure to handle different **versions** of **identities** (concepts) within **hierarchies**. In contrast to the versioning of datasets, the schema is specialized on the morphology of identities and its changes in time. The basic idea is to to model identities (e.g. a municipality) that are represented in their current state but also as evolving versions that show the development over time of the different identities. The reason for not only having successing versions but also a current identity is the idea to make it possible to link to stable identity IDs that do not change with every version and also to hide the complexity of a evolving identity if the user has no interest in the development but only in the current state of the identity. The following image tries to illustrate the connections between versions, identities and change events:
+The **version.link schema** does specify a schema to handle different **versions** of **identities** within **hierarchies**. Identities according to this schema are the principal ressources of interest and are very broadly understood. Identities could be municipalities, businesses, addresses, political positions, budget entities, public authorities, measurement stations et cetera. These identities all evolve in their state thereby creating different versions of themselves. The versions build the unbroken history of the indentity in representing a snapshot of the indentity for a given point in time or a given development stage. The version.link schema enables to model identities in hierarchical systems like communities that are parts of districts that are in turn parts of a country. In contrast to the versioning of datasets, the schema is specialized on the morphology of identities and its changes in time. 
+
+# The Monotonic *Version Graph*
+
+# The Changing *Identity Graph*
+
+
+The reason for not only having successing versions but also a current identity is the idea to make it possible to link to stable identity IDs that do not change with every version and also to hide the complexity of a evolving identity if the user has no interest in the development but only in the current state of the identity. The following image tries to illustrate the connections between versions, identities and change events:
 
 ![Basic version.link schema structure](./img/basics.svg)
 
