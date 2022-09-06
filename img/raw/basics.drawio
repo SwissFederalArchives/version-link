@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="xSjBeCdvLPPuWw6Fli61" name="Seite-1">
-        <mxGraphModel dx="1045" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1460" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -63,24 +63,36 @@
                     <mxGeometry x="520" y="240" width="200" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="mi:3871" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="80" width="200" height="20" as="geometry"/>
+                    <mxGeometry x="520" y="40" width="200" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="&lt;b style=&quot;font-size: 12px;&quot;&gt;&amp;nbsp; a vl:Identity&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="100" width="200" height="20" as="geometry"/>
+                    <mxGeometry x="520" y="60" width="200" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="&amp;nbsp; schema:name &quot;Klosters-Serneus&quot;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="120" width="200" height="20" as="geometry"/>
+                    <mxGeometry x="520" y="80" width="200" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=10;" parent="1" source="27" target="17" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="740" y="150"/>
+                            <mxPoint x="740" y="110"/>
                             <mxPoint x="740" y="210"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="27" value="&amp;nbsp; vl:version" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;fontSize=12;" parent="1" vertex="1">
-                    <mxGeometry x="520" y="140" width="200" height="20" as="geometry"/>
+                    <mxGeometry x="520" y="100" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="endArrow=none;dashed=1;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="20" y="160" as="sourcePoint"/>
+                        <mxPoint x="760" y="160" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="&lt;b&gt;&lt;i&gt;Identity Graph&lt;/i&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="130" width="100" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="&lt;b&gt;&lt;i&gt;Version Graph&lt;/i&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="160" width="100" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
