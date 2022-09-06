@@ -113,20 +113,26 @@ A ChangeEvent connects different [predecessors](#predecessor) and [successors](#
 
 ### Change Type Classes
 
-#### vl:InitialRecording
+#### vl:InitialRecording {#InitialRecording}
 Change type of a [ChangeEvent](#ChangeEvent). To create a [Version](#Version) without any [predecessors](#predecessor).
+
+#### vl:ChangeOfProperty {#ChangeOfProperty}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of property (that is not furhter specified on this level) of the corresponding [Identity](#Identity).
 
 #### vl:ChangeOfName {#ChangeOfName}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).
-
-#### vl:ChangeInHierarchy {#ChangeInHierarchy}
-Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change in hierarchy: [Version](#Version) changes level within the hierarchy or other Versions in upper or lower hierarchy change with effects on the Version present.
 
 #### vl:Separation {#Separation}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a separation of the corresponding [Identity](#Identity) into multiple Identities.
 
 #### vl:Combination {#Combination}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a combination of the corresponding [Identities](#Identity) into a single Identity.
+
+#### vl:ChangeInHierarchy {#ChangeInHierarchy}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of the position of the corresponding [Identity](#Identity) in hierarchy (on the same level). E.g. a municipality changes its belonging to the upper level district.
+
+#### vl:ChangeOfHierarchyLevel {#ChangeOfHierarchyLevel}
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of the hierarchy level of the corresponding [Identity](#Identity). E.g. a municipality becomes a district or a public authority moves up in the hierarchy.
 
 
 ## Profile Schema {#Profile_Schema}
