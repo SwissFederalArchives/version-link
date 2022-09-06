@@ -17,5 +17,8 @@ A new version of a identity is the result of one of the following changes:
 * **Change of properties**: the identity changes its properties (e.g. name or competence)
 * **Change in hierarchy**: the identity changes its level or its position within the hierarchy
 
+# Identities and Identifiers
+The Identity is bound to a certain Identifier. E.g. a certain municipality usually has got a unique number that identifies the municipality within the country. This number is usually used to create the URI of this identity. There are changes that do not change the identity itself, meaning the new Version still belongs to the same entity (e.g. change of name). Other changes involve the deprecation of Identities (e.g. combination of two municipalities, at most one identity "survives" this process). It is important that such deprecated Identities are not deleted from the *identity graph* to preserve links to this identity. To clarify that the identity does not exist anymore, a class [Deprecated](#Deprecated) is added.
+
 # History
 The version.link schema was developed for the specific use case of the [Swiss official commune register](https://www.bfs.admin.ch/bfs/en/home/basics/swiss-official-commune-register.html). Communes (municipalities) build a hierarchical system and undergo certain changes within time. Communes merge, split, change their names and belonging to the upper hierarchy levels. The Federal Statistical Office publishes a "Historisiertes Gemeindeverzeichnis" (only in [DE](https://www.bfs.admin.ch/bfs/de/home/grundlagen/agvch/historisiertes-gemeindeverzeichnis.html)/FR/IT) in XML format.
