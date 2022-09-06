@@ -94,6 +94,9 @@
                 <mxCell id="34" value="&lt;b&gt;&lt;i&gt;Version Graph&lt;/i&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
                     <mxGeometry x="20" y="160" width="100" height="30" as="geometry"/>
                 </mxCell>
+                <mxCell id="35" value="&amp;nbsp; a vl:Deprecated" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;fontSize=12;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="300" width="200" height="20" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
