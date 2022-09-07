@@ -71,7 +71,7 @@ miv:13233 a vl:Version;
 </aside>
     
 #### vl:Deprecated {#Deprecated}
-Added to [Versions](#Version) and [Identities](#Identity) to signal that they are deprecated. This class is especially useful, if Identities and Versions do not use start- and stop dates. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links.
+Added to the last [Version](#Version) and the corresponding [Identity](#Identity), if a ChangeEvent leads to the deprecation of the Identity. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links. The reason for adding Deprecated to the Version is the fact, that this helps to create the Identity programmatically and that all info should be available through the *version graph*.
 
 #### vl:VersionedIdentitySet {#VersionedIdentitySet}
 Represents the class of all the different objects of the versioned hierarchy.
