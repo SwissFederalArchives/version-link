@@ -81,6 +81,9 @@ Represents the class of all the different objects of the versioned hierarchy.
 #### vl:identity {#identity}
 Links a [Version](#Version) to the corresponding [Identity](#Identity).
 
+#### vl:identityIdentifier {#identityIdentifier}
+Links a [Version](#Version) to the corresponding identifier (usually a identifier system consisting of numbers, not the complete URI) of the [Identity](#Identity).
+
 #### vl:version {#version}
 Links a [Identity](#Identity) to the [Version](#Version) its currently based on.
 
