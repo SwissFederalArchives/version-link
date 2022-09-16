@@ -56,13 +56,13 @@
   rdfs:comment "Change type of a ChangeEvent. To create a Version without any predecessors.".
 
 <startEvent> a rdfs:Property;
-  rdfs:range <changeEvent>;
+  rdfs:range <ChangeEvent>;
   rdfs:domain <Version>;
   rdfs:label "start event";
   rdfs:comment "Links a certain Version to the ChangeEvent that started the Version.".
 
 <endEvent> a rdfs:Property;
-  rdfs:range <changeEvent>;
+  rdfs:range <ChangeEvent>;
   rdfs:domain <Version>;
   rdfs:label "end event";
   rdfs:comment "Links a certain Version to the ChangeEvent that ended the Version.".  
