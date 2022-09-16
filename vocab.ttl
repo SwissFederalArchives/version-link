@@ -3,5 +3,21 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 
-
 # Core Schema
+
+<>
+  rdfs:label "version.link schema".
+
+<Identity> a rdfs:Class;
+  rdfs:label "Identity";
+  rdfs:comment "Represents the Identity (concept). Identities are part of the Identity Graph.".
+
+<Version> a rdfs:Class;
+  rdfs:label "Version";
+  rdfs:comment "A certain state of the Identity. A change in the Identity leads to a new Version.".
+
+<identity> a rdfs:Property;
+  rdfs:range <Identity>;
+  rdfs:domain <Version>;
+  rdfs:label "identity";
+  rdfs:comment "Links a Version to the corresponding Identity.".
