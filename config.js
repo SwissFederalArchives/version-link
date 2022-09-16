@@ -12,11 +12,15 @@ var respecConfig = {
     },
     editors: [{
       name: "Benedikt Hitz-Gamper",
-      url: "https://www.bfh.ch",
+      company: "Bern University of Applied Sciences (BFH)",
+      companyURL: "https://www.bfh.ch/",
+      url: "https://www.linkedin.com/in/benedikt-hitz-gamper-331756209/",
+      orcid: "0000-0001-7937-0159",
     },
     {
       name: "Michael Luggen",
-      url: "https://www.bfh.ch",
+      company: "Bern University of Applied Sciences (BFH)",
+      companyUrl: "https://www.bfh.ch",
     }]
   };
 
