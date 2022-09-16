@@ -97,10 +97,10 @@ Connects a literal identifier (not the complete IRI) of the corresponding [Ident
 Links an [Identity](#Identity) to the [Version](#Version) its currently based on.
 
 #### vl:predecessor {#predecessor}
-Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a Version if multiple predecessor Versions exist (e.g. [Combination](#Combination).
+Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a Version if multiple predecessor Versions exist (e.g. [Combination](#Combination)).
 
 #### vl:successor {#successor}
-Links a certain [Version](#Version) to its successor Version. Can be used multiple times in a Version if multiple successor Versions exist (e.g. [Separation](#Separation).
+Links a certain [Version](#Version) to its successor Version. Can be used multiple times in a Version if multiple successor Versions exist (e.g. [Separation](#Separation)).
 
 #### vl:startEvent {#startEvent}
 Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that started the Version.
