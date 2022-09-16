@@ -9,6 +9,7 @@
 | skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for the profile. |
 | dcterm | [http://purl.org/dc/terms/](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) | Used for the profile. |
 | xsd | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) | Used for string literal types. |
+| rdfs | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) | Used for building the class hierarchy. |
 
 ### For the examples
 | PREFIX | IRI | Description |
@@ -33,7 +34,14 @@ version.link consists of three schemata:
 ### Classes
 
 #### vl:Identity {#Identity}
-Represents the Identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier [[[sparql11-query]]] queries as long as the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions.
+Represents the Identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier [[[sparql11-query]]] queries as long as the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions. Identities are part of the *Identity Graph*.
+
+Mandatory and optional properties for [vl:Identity](#Identity)
+| Mandatory | Optional |
+|[vl:version](#version)|[vl:identifierPredicate](#identifierPredicate)|
+|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:namePredicate](#namePredicate)|
+||[vl:hasPartPredicate](#hasPartPredicate)|
+||[vl:isPartOfPredicate](#isPartOfPredicate)|
 
 In [[[turtle]]] syntax, an example Version might look like this:
 
@@ -82,7 +90,7 @@ Represents the class of all the different objects of the versioned hierarchy.
 Links a [Version](#Version) to the corresponding [Identity](#Identity).
 
 #### vl:identityIdentifier {#identityIdentifier}
-Links a [Version](#Version) to the corresponding identifier (usually a identifier system consisting of numbers, not the complete URI) of the [Identity](#Identity).
+Connects a literal identifier (not the complete IRI) of the corresponding [Identity](#Identity) to the [Version](#Version).
 
 #### vl:version {#version}
 Links a [Identity](#Identity) to the [Version](#Version) its currently based on.
@@ -107,20 +115,19 @@ Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeE
 
 The succession of different [Versions](#Version) of an [Identity](#Identity) can be constructed either with direct linking of the Versions with [successor](#successor) and [predecessor](#predecessor) or by inserting a [ChangeEvent](#ChangeEvent) that enables to state more precisely the kind of ChangeEvent. The following picture illustrates this two variants:
 
-![Successor Variants](./img/successor_variants.svg)
+![Successor Variants](./img/successor_variants.svg "Succession by direct linking or with means of a ChangeEvent")
 
 ### Classes
 
 #### vl:ChangeEvent {#ChangeEvent}
 A ChangeEvent connects different [predecessors](#predecessor) and [successors](#successor) of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.
 
-### Change Type Classes
+### Subclasses of vl:ChangeEvent
+
+The following classes allow to further specify the [ChangeEvent](#ChangeEvent) and are therefore built as rdfs:subClassOf vl:ChangeEvent.
 
 #### vl:InitialRecording {#InitialRecording}
 Change type of a [ChangeEvent](#ChangeEvent). To create a [Version](#Version) without any [predecessors](#predecessor).
-
-#### vl:ChangeOfProperty {#ChangeOfProperty}
-Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of property (that is not furhter specified on this level) of the corresponding [Identity](#Identity).
 
 #### vl:ChangeOfName {#ChangeOfName}
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of name of the corresponding [Identity](#Identity).
