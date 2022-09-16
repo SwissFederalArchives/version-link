@@ -222,3 +222,7 @@ For linking Versions of one hierarchy level to Identities of another hierarchy l
 * Linking in both directions
     
 From the point of view of a SPARQL query, these three variants are more or less identical and do not exhibit any particular advantages. If there are lots of Versions in a lower level belonging to one Identity in an upper hierarchy level, it may be advantegous to only link from the lower to the uper level because of clarity in dereferencing the upper level (otherwise it is possible that the upper level has a myriad of [hasPartPredicate](#hasPartPredicate) entries).
+
+The following image illustrates a Version linking to an Identity in another hierarchy level (and not to the corresponding Version):
+
+![Linking across hierarchy levels](./img/linking_hierarchies.svg "Linking across hierarchy levels: Note the red link that leads to the Identity and not to the Version of the upper hierarchy level.")

@@ -11,7 +11,7 @@ The idea of the *Identity Graph* is to have a snapshot of every Identity without
 
 The following image tries to illustrate the relationship between Itentities and its Versions residing in ther respective graphs. For better clarity, the picture does not represent all the mandatory triples required by the version.link schema:
 
-![Basic version.link schema structure](./img/basics.svg "Relationship between Identities and Versions")
+![Basic version.link schema structure](./img/basics.svg "Relationship between Identities and Versions.")
 
 A new Version of an Identity is the result of one of the following changes:
 
