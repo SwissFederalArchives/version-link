@@ -27,3 +27,9 @@
   rdfs:domain <Identity>;
   rdfs:label "version";
   rdfs:comment "Links an Identity to the Version its currently based on.".
+
+<identityIdentifier> a rdfs:Property;
+  rdfs:range rdfs:Literal;
+  rdfs:domain <Version>;
+  rdfs:label "identity indentifier";
+  rdfs:comment "Connects a literal identifier (not the complete IRI) of the corresponding Identity to the Version.".
