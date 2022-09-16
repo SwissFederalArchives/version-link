@@ -94,7 +94,7 @@ Links a [Version](#Version) to the corresponding [Identity](#Identity).
 Connects a literal identifier (not the complete IRI) of the corresponding [Identity](#Identity) to the [Version](#Version).
 
 #### vl:version {#version}
-Links a [Identity](#Identity) to the [Version](#Version) its currently based on.
+Links an [Identity](#Identity) to the [Version](#Version) its currently based on.
 
 #### vl:predecessor {#predecessor}
 Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a Version if multiple predecessor Versions exist (e.g. [Combination](#Combination).
