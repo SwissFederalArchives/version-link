@@ -3,7 +3,7 @@
 ## Prefixes
 ### version.link
 | PREFIX | IRI | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | vl | https://version.link/ | version.link|
 | schema | [http://schema.org/](http://schema.org) | Used for the profile. |
 | skos | [http://www.w3.org/2004/02/skos/core#](https://www.w3.org/2009/08/skos-reference/skos.html) | Used for the profile. |
@@ -13,7 +13,7 @@
 
 ### For the examples
 | PREFIX | IRI | Description |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | as | [https://schema.ld.admin.ch/](https://schema.ld.admin.ch/) | |
 | mi | https://ld.admin.ch/municipality/ | |
 | miv | https://ld.admin.ch/municipality/version/ | |
@@ -38,7 +38,7 @@ Represents the Identity (concept). The reason to not only have different [Versio
 
 Mandatory and optional properties for [vl:Identity](#Identity)
 | Mandatory | Optional |
-| --- | --- |
+| :--- | :--- |
 |[vl:version](#version)|[vl:identifierPredicate](#identifierPredicate)|
 |[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:namePredicate](#namePredicate)|
 ||[vl:hasPartPredicate](#hasPartPredicate)|
