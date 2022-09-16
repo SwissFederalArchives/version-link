@@ -21,3 +21,9 @@
   rdfs:domain <Version>;
   rdfs:label "identity";
   rdfs:comment "Links a Version to the corresponding Identity.".
+
+<version> a rdfs:Property;
+  rdfs:range <Version>;
+  rdfs:domain <Identity>;
+  rdfs:label "version";
+  rdfs:comment "Links an Identity to the Version its currently based on.".
