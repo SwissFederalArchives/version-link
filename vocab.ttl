@@ -51,6 +51,5 @@
   rdfs:comment "A ChangeEvent connects different predecessors and successors of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.".
 
 <InitialRecording> a rdfs:Class;
-  rdfs:subClassOf <ChangeEvent>;
   rdfs:label "Initial Recording";
   rdfs:comment "Change type of a ChangeEvent. To create a Version without any predecessors.".
