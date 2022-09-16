@@ -38,6 +38,7 @@ Represents the Identity (concept). The reason to not only have different [Versio
 
 Mandatory and optional properties for [vl:Identity](#Identity)
 | Mandatory | Optional |
+| --- | --- |
 |[vl:version](#version)|[vl:identifierPredicate](#identifierPredicate)|
 |[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:namePredicate](#namePredicate)|
 ||[vl:hasPartPredicate](#hasPartPredicate)|
