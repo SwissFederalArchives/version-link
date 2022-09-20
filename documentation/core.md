@@ -39,10 +39,9 @@ Represents the Identity (concept). The reason to not only have different [Versio
 Mandatory and optional properties for [vl:Identity](#Identity)
 | Mandatory | Optional |
 | :--- | :--- |
-|[vl:version](#version)|[vl:identifierPredicate](#identifierPredicate)|
-|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:namePredicate](#namePredicate)|
-||[vl:hasPartPredicate](#hasPartPredicate)|
-||[vl:isPartOfPredicate](#isPartOfPredicate)|
+|[vl:version](#version)|[vl:namePredicate](#namePredicate)|
+|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:hasPartPredicate](#hasPartPredicate)|
+|[vl:identifierPredicate](#identifierPredicate)|[vl:isPartOfPredicate](#isPartOfPredicate)|
 
 In [[[turtle]]] syntax, an example Version might look like this:
 
@@ -213,7 +212,7 @@ Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#
     
 To establish the **hierarchy** with the version.link schema, links accross hierarchy levels have to be established. The problem with linking [Versions](#Version) in one hierarchy level to Versions in another level is the fact, that any change in any Version of any hierarchy level leads to a cascade of changes resulting in every Version in every hierarchy level needing an update: For example, if a municipality changes, a new municipality Version will be created. The old Version will get a class Deprecated added and therefore, a Link from a Deprecated Version of a municipality to a current Version of a district will be established. This can only be prevented by creating a new Version for this district as well and adding a class Deprecated to the old district Version. But this "deprecation" of the old district means that all the municipalities belonging to this now Deprecated district must iterate to the next Version. At the same time, the new Version of the district will influence the upper hierarchy as well (with the same reasoning as above) and these changes will in turn propagate down to other districts as well, leading to a complete cascading iteration of all Versions in all hierarchy levels.
 
-To prevent this cascading change, links from Versions to another hierarchy level could be made to the corresponding [Identity](#Identity) instead of the Version in the other hierarchy level. As the Identity is usually more stable, not every change needs updating the whole hierarchy. 
+To prevent this cascading change, links from Versions to another hierarchy level should be made to the corresponding [Identity](#Identity) instead of the Version in the other hierarchy level. As the Identity is usually more stable, not every change needs updating the whole hierarchy. 
 
 For linking Versions of one hierarchy level to Identities of another hierarchy level (municipalities link to their district), different possibilities exist:
     
