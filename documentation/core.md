@@ -88,6 +88,7 @@ Mandatory and optional properties (and values) for [vl:Version](#Version)
 miv:13233 a vl:Version;
     a as:MunicipalityVersion;
     vl:identity mi:3871;
+    vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "13233";
     schema:name "Klosters-Serneus";
@@ -214,8 +215,8 @@ vl:Profile_SKOS a vl:Profile;
     vl:identifierPredicate skos:notation;
     vl:namePredicate skos:prefLabel;
     vl:datePredicate dcterms:date;
-# missing    vl:startDatePredicate ;
-# missing    vl:endDatePredicate ;
+    # missing vl:startDatePredicate ;
+    # missing vl:endDatePredicate ;
     vl:hasPartPredicate skos:narrower;
     vl:isPartOfPredicate skos:broader.
 ```
