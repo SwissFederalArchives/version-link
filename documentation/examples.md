@@ -22,19 +22,21 @@ The example depicts the municiaplity "Klosters" and its change events over time.
 miv:11299 a vl:Version;
     a as:MunicipalityVersion;
     vl:identity mi:3871;
+    vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "11299";
     schema:name "Klosters";
-    schema:isPartOf dtv:10175;
+    schema:isPartOf dt:1811;
     vl:successor miv:13233.
 
 miv:13233 a vl:Version;
     a as:MunicipalityVersion;
     vl:identity mi:3871;
+    vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "13233";
     schema:name "Klosters-Serneus";
-    schema:isPartOf dtv:10175;
+    schema:isPartOf dt:1811;
     vl:predecessor miv:11299;
     vl:successor miv:14310.
 ```
@@ -48,11 +50,11 @@ miv:13233 a vl:Version;
 ```turtle example
 mi:3871 a vl:Identity;
     a as:PoliticalMunicipality;
-    vl:version miv:16610;
+    vl:version miv:13233;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "3871";
-    schema:name "Klosters";
-    schema:isPartOf dt:1849.
+    schema:name "Klosters-Serneus";
+    schema:isPartOf dt:1811.
 ```
 
 </aside>
@@ -67,10 +69,11 @@ mi:3871 a vl:Identity;
 miv:11299 a vl:Version;
     a as:MunicipalityVersion;
     vl:identity mi:3871;
+    vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "11299";
     schema:name "Klosters";
-    schema:isPartOf dtv:10175;
+    schema:isPartOf dt:1811;
     schema:startDate "1960-01-01T00:00:00"^^xsd:dateTime;
     vl:startEvent mce:1000_11299;
     schema:endDate "1973-12-31T24:00:00"^^xsd:dateTime;
@@ -80,14 +83,16 @@ miv:11299 a vl:Version;
 miv:13233 a vl:Version;
     a as:MunicipalityVersion;
     vl:identity mi:3871;
+    vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "13233";
     schema:name "Klosters-Serneus";
-    schema:isPartOf dtv:10175;
+    schema:isPartOf dt:1811;
     schema:startDate "1974-01-01T00:00:00"^^xsd:dateTime;
     vl:startEvent mce:1048;
     schema:endDate "2000-12-31T24:00:00"^^xsd:dateTime;
     vl:endEvent mce:2110;
+    vl:predecessor miv:11299;
     vl:successor miv:14310.
 ```
 
