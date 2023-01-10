@@ -20,7 +20,7 @@ The example depicts the municiaplity "Klosters" and its change events over time.
 
 ```turtle example
 miv:11299 a vl:Version;
-    a as:MunicipalityVersion;
+    a admin:MunicipalityVersion;
     vl:identity mi:3871;
     vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
@@ -30,7 +30,7 @@ miv:11299 a vl:Version;
     vl:successor miv:13233.
 
 miv:13233 a vl:Version;
-    a as:MunicipalityVersion;
+    a admin:MunicipalityVersion;
     vl:identity mi:3871;
     vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
@@ -49,7 +49,7 @@ miv:13233 a vl:Version;
 
 ```turtle example
 mi:3871 a vl:Identity;
-    a as:PoliticalMunicipality;
+    a admin:PoliticalMunicipality;
     vl:version miv:13233;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "3871";
@@ -67,7 +67,7 @@ mi:3871 a vl:Identity;
 
 ```turtle example
 miv:11299 a vl:Version;
-    a as:MunicipalityVersion;
+    a admin:MunicipalityVersion;
     vl:identity mi:3871;
     vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
@@ -81,7 +81,7 @@ miv:11299 a vl:Version;
     vl:successor miv:13233.
 
 miv:13233 a vl:Version;
-    a as:MunicipalityVersion;
+    a admin:MunicipalityVersion;
     vl:identity mi:3871;
     vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
@@ -104,14 +104,14 @@ miv:13233 a vl:Version;
 
 ```turtle example
 mce:1000_11299 a vl:ChangeEvent;
-    a as:MunicipalityChangeEvent;
+    a admin:MunicipalityChangeEvent;
     a vl:InitialRecording;
     schema:date "1960-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     vl:successor miv:11299.
 
 mce:1048 a vl:ChangeEvent;
-    a as:MunicipalityChangeEvent;
+    a admin:MunicipalityChangeEvent;
     a vl:ChangeOfName;
     schema:date "1974-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
@@ -127,7 +127,7 @@ mce:1048 a vl:ChangeEvent;
 
 ```turtle example
 mi:3871 a vl:Identity;
-    a as:PoliticalMunicipality;
+    a admin:PoliticalMunicipality;
     vl:version miv:16610;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "3871";
