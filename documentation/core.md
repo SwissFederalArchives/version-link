@@ -18,7 +18,7 @@
 
 | PREFIX | IRI | Description |
 | :--- | :--- | :--- |
-| as | [https://schema.ld.admin.ch/](https://schema.ld.admin.ch/) | |
+| admin | [https://schema.ld.admin.ch/](https://schema.ld.admin.ch/) | |
 | mi | https://ld.admin.ch/municipality/ | |
 | miv | https://ld.admin.ch/municipality/version/ | |
 | dt | https://ld.admin.ch/district/ | |
@@ -44,10 +44,10 @@ Represents the Identity (concept). The reason to not only have different [Versio
 Mandatory and optional properties (and values) for [vl:Identity](#Identity)
 | Mandatory | Optional |
 | :--- | :--- |
-|rdf:type [vl:Identity](#Identity)|[vl:namePredicate](#namePredicate)|
-|[vl:version](#version)|[vl:hasPartPredicate](#hasPartPredicate)|
-|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:isPartOfPredicate](#isPartOfPredicate)|
-|[vl:identifierPredicate](#identifierPredicate)|rdf:type [vl:Deprecated](#Deprecated)|
+|rdf:type [vl:Identity](#Identity)|[schema:name](https://schema.org/name)|
+|[vl:version](#version)|[schema:hasPart](https://schema.org/hasPart)|
+|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[schema:isPartOf](https://schema.org/isPartOf)|
+|[schema:identifier](https://schema.org/identifier)|rdf:type [vl:Deprecated](#Deprecated)|
 
 
 In [[[turtle]]] syntax, an example Version might look like this:
@@ -56,7 +56,7 @@ In [[[turtle]]] syntax, an example Version might look like this:
 
 ```turtle example
 mi:3871 a vl:Identity;
-    a as:PoliticalMunicipality;
+    a admin:PoliticalMunicipality;
     vl:version miv:16610;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     schema:identifier "3871";
@@ -73,20 +73,20 @@ A certain state of the [Identity](#Identity). A change in the Identity leads to 
 Mandatory and optional properties (and values) for [vl:Version](#Version)
 | Mandatory | Optional |
 | :--- | :--- |
-|rdf:type [vl:Version](#Version)|[vl:namePredicate](#namePredicate)|
+|rdf:type [vl:Version](#Version)|[schema:name](https://schema.org/name)|
 |[vl:identity](#identity) (if *Identity Graph* exists)|[vl:startEvent](#startEvent)|
 |[vl:identityIdentifier](#identityIdentifier)|[vl:endEvent](#endEvent)|
-|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[vl:hasPartPredicate](#hasPartPredicate)|
-|[vl:identifierPredicate](#identifierPredicate)|[vl:isPartOfPredicate](#isPartOfPredicate)|
-|[vl:predecessor](#predecessor) (if applicable)|[vl:startDatePredicate](#startDatePredicate)|
-|[vl:successor](#successor) (if applicable)|[vl:endDatePredicate](#endDatePredicate)|
+|[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[schema:hasPart](https://schema.org/hasPart)|
+|[schema:identifier](https://schema.org/identifier)|[schema:isPartOf](https://schema.org/isPartOf)|
+|[vl:predecessor](#predecessor) (if applicable)|[schema:startDate](https://schema.org/startDate)|
+|[vl:successor](#successor) (if applicable)|[schema:endDate](https://schema.org/endDate)|
 ||rdf:type [vl:Deprecated](#Deprecated)|
 
 <aside class='example' title='Version example'>
 
 ```turtle example
 miv:13233 a vl:Version;
-    a as:MunicipalityVersion;
+    a admin:MunicipalityVersion;
     vl:identity mi:3871;
     vl:identityIdentifier "3871";
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
@@ -190,6 +190,8 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of the
 #### vl:Profile {#Profile}
 
 The Profile enables the use of different vocabularies for the generic properties depending on the domain practices. By setting this profile it is possible to use the version.link SPARQL queries for different ontologies. This ontology provides some common mappings which can be considered as guidelines.
+
+Throughout this schema, the 'schema.org' profile is used for defining the mandatory properties and the examples.
 
 In [[[turtle]]] syntax, an example Profile might look like this:
 
