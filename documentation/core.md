@@ -201,7 +201,6 @@ In [[[turtle]]] syntax, an example Profile might look like this:
 vl:Profile_SchemaOrg a vl:Profile;
     vl:identifierPredicate schema:identifier;
     vl:namePredicate schema:name;
-    vl:datePredicate schema:date;
     vl:startDatePredicate schema:startDate;
     vl:endDatePredicate schema:endDate;
     vl:hasPartPredicate schema:hasPart;
@@ -216,12 +215,12 @@ vl:Profile_SchemaOrg a vl:Profile;
 vl:Profile_SKOS a vl:Profile;
     vl:identifierPredicate skos:notation;
     vl:namePredicate skos:prefLabel;
-    vl:datePredicate dcterms:date;
-    # missing vl:startDatePredicate ;
-    # missing vl:endDatePredicate ;
+    vl:startDatePredicate dcterms:date;
+    vl:endDatePredicate dcterms:date;
     vl:hasPartPredicate skos:narrower;
     vl:isPartOfPredicate skos:broader.
 ```
+See use of [dcterms:date](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/date/) for periods of time
 
 </aside>
 
@@ -236,13 +235,9 @@ Binds the identification to a [Version](#Version) or [Identity](#Identity). Allo
 
 Binds the name to a [Version](#Version) or [Identity](#Identity).
 
-#### vl:datePredicate {#datePredicate}
-
-Binds the date to a [ChangeEvent](#ChangeEvent).
-
 #### vl:startDatePredicate {#startDatePredicate}
 
-Binds the start date to a [Version](#Version).
+Binds the start date to a [Version](#Version) or the date to a [ChangeEvent](#ChangeEvent) (as there is no schema:date).
 
 #### vl:endDatePredicate {#endDatePredicate}
 

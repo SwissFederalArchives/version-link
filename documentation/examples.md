@@ -106,14 +106,14 @@ miv:13233 a vl:Version;
 mce:1000_11299 a vl:ChangeEvent;
     a admin:MunicipalityChangeEvent;
     a vl:InitialRecording;
-    schema:date "1960-01-01T00:00:00"^^xsd:dateTime;
+    schema:startDate "1960-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     vl:successor miv:11299.
 
 mce:1048 a vl:ChangeEvent;
     a admin:MunicipalityChangeEvent;
     a vl:ChangeOfName;
-    schema:date "1974-01-01T00:00:00"^^xsd:dateTime;
+    schema:startDate "1974-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     vl:predecessor miv:11299;
     vl:successor miv:13233.
