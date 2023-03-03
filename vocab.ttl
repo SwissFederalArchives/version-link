@@ -16,23 +16,31 @@
   rdfs:label "Version";
   rdfs:comment "A certain state of the Identity. A change in the Identity leads to a new Version.".
 
+<Deprecated> a rdfs:Class;
+  rdfs:label "Deprecated";
+  rdfs:comment "Added to the last Version and the corresponding Identity, if a ChangeEvent leads to the deprecation of the Identity."
+
+<VersionedIdentitySet> a rdfs:Class;
+  rdfs:label "Versioned Identity Set";
+  rdfs:comment "Represents the class of all the different objects of the versioned hierarchy."
+
 <identity> a rdfs:Property;
   rdfs:range <Identity>;
   rdfs:domain <Version>;
   rdfs:label "identity";
   rdfs:comment "Links a Version to the corresponding Identity.".
 
-<version> a rdfs:Property;
-  rdfs:range <Version>;
-  rdfs:domain <Identity>;
-  rdfs:label "version";
-  rdfs:comment "Links an Identity to the Version its currently based on.".
-
 <identityIdentifier> a rdfs:Property;
   rdfs:range rdfs:Literal;
   rdfs:domain <Version>;
   rdfs:label "identity identifier";
   rdfs:comment "Connects a literal identifier (not the complete IRI) of the corresponding Identity to the Version.".
+
+<version> a rdfs:Property;
+  rdfs:range <Version>;
+  rdfs:domain <Identity>;
+  rdfs:label "version";
+  rdfs:comment "Links an Identity to the Version its currently based on.".
 
 <predecessor> a rdfs:Property;
   rdfs:range <Version>;
@@ -46,15 +54,6 @@
   rdfs:label "successor";
   rdfs:comment "Links a certain Version to its successor Version. Can be used multiple times in a Version if multiple successor Versions exist (e.g. Separation).".
 
-<ChangeEvent> a rdfs:Class;
-  rdfs:label "Change Event";
-  rdfs:comment "A ChangeEvent connects different predecessors and successors of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.".
-
-<InitialRecording> a rdfs:Class;
-  rdfs:subClassOf <ChangeEvent>;
-  rdfs:label "Initial Recording";
-  rdfs:comment "Change type of a ChangeEvent. To create a Version without any predecessors.".
-
 <startEvent> a rdfs:Property;
   rdfs:range <ChangeEvent>;
   rdfs:domain <Version>;
@@ -65,4 +64,46 @@
   rdfs:range <ChangeEvent>;
   rdfs:domain <Version>;
   rdfs:label "end event";
-  rdfs:comment "Links a certain Version to the ChangeEvent that ended the Version.".  
+  rdfs:comment "Links a certain Version to the ChangeEvent that ended the Version.". 
+
+<inVersionedIdentitySet> a rdfs:Property;
+  rdfs:range <ChangeEvent>;
+  rdfs:domain <Version>;
+  rdfs:domain <Identity>;
+  rdfs:domain <VersionedIdentitySet>;
+  rdfs:label "in versioned identity set";
+  rdfs:comment "Connects an Identity, Version or ChangeEvent to a specific VersionedIdentitySet". 
+
+<ChangeEvent> a rdfs:Class;
+  rdfs:label "Change Event";
+  rdfs:comment "A ChangeEvent connects different predecessors and successors of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.".
+
+<InitialRecording> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Initial Recording";
+  rdfs:comment "Change type of a ChangeEvent. To create a Version without any predecessors.".
+
+<ChangeOfName> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Change Of Name";
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of name of the corresponding Identity".
+
+<Separation> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Separation";
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a separation of the corresponding Identity into multiple identities".
+
+<Combination> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Combination";
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a combination of the corresponding Identities into a single Identity".
+
+<ChangeInHierarchy> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Change In Hierarchy";
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of the position of the corresponding Identity in hierarchy (on the same level)".
+
+<ChangeOfHierarchyLevel> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Change In Hierarchy";
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of the hierarchy level of the corresponding Identity".
