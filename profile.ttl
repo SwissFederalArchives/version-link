@@ -7,7 +7,6 @@
 vl:Profile_SchemaOrg a vl:Profile;
     vl:identifierPredicate schema:identifier;
     vl:namePredicate schema:name;
-    vl:datePredicate schema:date;
     vl:startDatePredicate schema:startDate;
     vl:endDatePredicate schema:endDate;
     vl:hasPartPredicate schema:hasPart;
@@ -17,8 +16,7 @@ vl:Profile_SchemaOrg a vl:Profile;
 vl:Profile_SKOS a vl:Profile;
     vl:identifierPredicate skos:notation;
     vl:namePredicate skos:prefLabel;
-    vl:datePredicate dcterms:date;
-# missing    vl:startDatePredicate ;
-# missing    vl:endDatePredicate ;
+    vl:startDatePredicate dcterms:date;
+    vl:endDatePredicate dcterms:date;
     vl:hasPartPredicate skos:narrower;
     vl:isPartOfPredicate skos:broader.
