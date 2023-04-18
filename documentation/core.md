@@ -41,7 +41,7 @@ version.link consists of three schemata:
 
 Represents the Identity (concept). The reason to not only have different [Versions](#Version) but also an actual Identity is the idea to have the possibility to build easier [[[sparql11-query]]] queries if the Identity history is not of much relevance. The Identity can usually be created programmatically (e.g. [[[sparql11-update]]]) from the corresponding Versions. Identities are part of the *Identity Graph*.
 
-Mandatory and optional properties (and values) for [vl:Identity](#Identity)
+Mandatory and optional properties (and values) for [vl:Identity](#Identity):
 | Mandatory | Optional |
 | :--- | :--- |
 |rdf:type [vl:Identity](#Identity)|[schema:name](https://schema.org/name)|
@@ -68,9 +68,9 @@ mi:3871 a vl:Identity;
 
 #### vl:Version {#Version}
 
-A certain state of the [Identity](#Identity). A change in the Identity leads to a new Version.
+Versions represent a specified state of the [Identity](#Identity). Certain changes to the property of the real Identity (e.g. change of name) can lead to the creation of a new Version.
 
-Mandatory and optional properties (and values) for [vl:Version](#Version)
+Mandatory and optional properties (and values) for [vl:Version](#Version):
 | Mandatory | Optional |
 | :--- | :--- |
 |rdf:type [vl:Version](#Version)|[schema:name](https://schema.org/name)|
@@ -101,11 +101,11 @@ miv:13233 a vl:Version;
     
 #### vl:Deprecated {#Deprecated}
 
-Added to the last [Version](#Version) and the corresponding [Identity](#Identity), if a ChangeEvent leads to the deprecation of the Identity. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links. The reason for adding Deprecated to the Version is the fact, that this helps to create the Identity programmatically and that all info should be available through the *version graph*.
+A class Deprecated is added to the last [Version](#Version) *and* the corresponding [Identity](#Identity), if a [ChangeEvent](#ChangeEvent) leads to the deprecation of the Identity. Deprecated Identities should not be deleted in the [VersionedIdentitySet](#VersionedIdentitySet) to avoid broken links. The reason for adding Deprecated to the Version is the fact, that this helps to create the Identity programmatically and that all info should be available through the *Version Graph* alone.
 
 #### vl:VersionedIdentitySet {#VersionedIdentitySet}
 
-Represents the class of all the different objects of the versioned hierarchy.
+Represents the class of all the different objects of the versioned hierarchy and includes all the different [Identities](#Identity), [Versions](#Version) and [ChangeEvents](#ChangeEvent) in one set.
 
 ### Properties
 
@@ -115,19 +115,19 @@ Links a [Version](#Version) to the corresponding [Identity](#Identity).
 
 #### vl:identityIdentifier {#identityIdentifier}
 
-Connects a literal identifier (not the complete IRI) of the corresponding [Identity](#Identity) to the [Version](#Version).
+Connects a literal identifier (not the complete IRI) of the corresponding [Identity](#Identity) to the [Version](#Version). Allows to create the *Identity Graph* from the *Version Graph* because the identifier can be used to create the URI of the Identity.
 
 #### vl:version {#version}
 
-Links an [Identity](#Identity) to the [Version](#Version) its currently based on.
+Links an [Identity](#Identity) to the [Version](#Version) its currently based on. This link can only be set once. The history of all the Versions involved in the Identity has to be queried through the [predecessor](#predecessor) and [successor](#successor) of Versions.
 
 #### vl:predecessor {#predecessor}
 
-Links a certain [Version](#Version) to its predecessor Version. Can be used multiple times in a Version if multiple predecessor Versions exist (e.g. [Combination](#Combination)).
+Links a certain [Version](#Version) to its preceding Version. Can be used multiple times in a Version if multiple preceding Versions exist (e.g. [Combination](#Combination)). This predicate is also used to denote the Versions in a [ChangeEvent](#ChangeEvent) that are involved at the beginning of the change ('entry Versions').
 
 #### vl:successor {#successor}
 
-Links a certain [Version](#Version) to its successor Version. Can be used multiple times in a Version if multiple successor Versions exist (e.g. [Separation](#Separation)).
+Links a certain [Version](#Version) to its subsequent Version. Can be used multiple times in a Version if multiple subsequent Versions exist (e.g. [Separation](#Separation)). This predicate is also used to denote the Versions in a [ChangeEvent](#ChangeEvent) that result from the change ('exit Versions').
 
 #### vl:startEvent {#startEvent}
 
@@ -139,12 +139,12 @@ Links a certain [Version](#Version) to the [ChangeEvent](#ChangeEvent) that ende
 
 #### vl:inVersionedIdentitySet {#inVersionedIdentitySet}
 
-Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeEvent) to a specific [VersionedIdentitySet](#VersionedIdentitySet)
+Connects an [Identity](#Identity), [Version](#Version) or [ChangeEvent](#ChangeEvent) to a specific [VersionedIdentitySet](#VersionedIdentitySet).
 
 
 ## Change Event Schema {#Change_Event_Schema}
 
-The succession of different [Versions](#Version) of an [Identity](#Identity) can be constructed either with direct linking of the Versions with [successor](#successor) and [predecessor](#predecessor) or by inserting a [ChangeEvent](#ChangeEvent) that enables to state more precisely the kind of ChangeEvent. The following picture illustrates these two variants:
+The succession of different [Versions](#Version) of an [Identity](#Identity) can be constructed either with direct linking of the Versions with [successor](#successor) and [predecessor](#predecessor) or by inserting a [ChangeEvent](#ChangeEvent) that enables to state more precisely the kind of ChangeEvent that led to the new Version. The following picture illustrates these two variants:
 
 ![Successor Variants](./img/successor_variants.svg "Succession by direct linking or with means of a ChangeEvent")
 
@@ -152,11 +152,11 @@ The succession of different [Versions](#Version) of an [Identity](#Identity) can
 
 #### vl:ChangeEvent {#ChangeEvent}
 
-A ChangeEvent connects different [predecessors](#predecessor) and [successors](#successor) of a specific change and has a single change type added. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.
+A ChangeEvent connects different [predecessors](#predecessor) ('entry Versions') and [successors](#successor) ('exit Versions') of a specific change and has a single change type added as subclass. It is also possible to add multiple ChangeEvents with other change types and ChangeEvent that connect only a subset of all the predecessors and successors with more domain specific change types. The ChangeEvent should also have a date. ChangeEvents are instantaneous events with no duration.
 
-### Subclasses of vl:ChangeEvent
+### Change Types
 
-The following classes allow to further specify the [ChangeEvent](#ChangeEvent) and are therefore built as rdfs:subClassOf vl:ChangeEvent.
+The following classes allow to further specify the change type of [ChangeEvents](#ChangeEvent) and are built as rdfs:subClassOf vl:ChangeEvent.
 
 #### vl:InitialRecording {#InitialRecording}
 
@@ -182,6 +182,9 @@ Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of the
 
 Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a change of the hierarchy level of the corresponding [Identity](#Identity). E.g. a municipality becomes a district or a public authority moves up in the hierarchy.
 
+#### vl:Deprecation {#Deprecation}
+
+Change type of a [ChangeEvent](#ChangeEvent) that corresponds to a deprecation of the corresponding [Identity](#Identity). E.g. a public authority just stops to exist (without merging into another Identity which would be modeled as [Combination](#Combination)).
 
 ## Profile Schema {#Profile_Schema}
 
@@ -253,18 +256,29 @@ Allows to construct the hierarchy of objects within the [VersionedIdentitySet](#
 
 ## Linking Across Hierarchy Levels
     
-To establish the **hierarchy** with the version.link schema, links across hierarchy levels have to be established. The problem with linking [Versions](#Version) in one hierarchy level to Versions in another level is the fact, that any change in any Version of any hierarchy level leads to a cascade of changes resulting in every Version in every hierarchy level needing an update: For example, if a municipality changes, a new municipality Version will be created. The old Version will get a class Deprecated added and therefore, a Link from a Deprecated Version of a municipality to a current Version of a district will be established. This can only be prevented by creating a new Version for this district as well and adding a class Deprecated to the old district Version. But this "deprecation" of the old district means that all the municipalities belonging to this now Deprecated district must iterate to the next Version. At the same time, the new Version of the district will influence the upper hierarchy as well (with the same reasoning as above) and these changes will in turn propagate down to other districts as well, leading to a complete cascading iteration of all Versions in all hierarchy levels.
+To establish the **hierarchy** with the version.link schema, links across hierarchy levels have to be established by using [hasPartPredicate](#hasPartPredicate) and [isPartOfPredicate](#isPartOfPredicate) constructs. These links create some difficulties during changes in one level of the hierarchy.
 
-To prevent this cascading change, links from Versions to another hierarchy level should be made to the corresponding [Identity](#Identity) instead of the Version in the other hierarchy level. As the Identity is usually more stable, not every change needs updating the whole hierarchy. 
+If one accepts, that Versions on a certain hierarchy level have multiple 'partOf' links to other hierarchy levels (even if e.g. a community can only be part of one upper level district), the problem is mitigated and has to be accounted for in querying the data. A query must therefore take into account the temporal validity of the Versions involved.
 
-For linking Versions of one hierarchy level to Identities of another hierarchy level (municipalities link to their district), different possibilities exist:
+For example, if a district changes its name and therefore, a new [Version](#Version) of this district is created, all municipalities belonging to this district, have to have a second [isPartOfPredicate](#isPartOfPredicate) added with the new Version of the district as object. Because the two Versions of the district are in a temporal succession (only one Version of the district is valid a certain time), also only one [isPartOfPredicate](#isPartOfPredicate) link is valid at a certain time. But the validity of the link is only visible through the temporal validity of the linked Versions.
+
+If such multiple 'partOf' links are not tolerated, a single change in one Version on one level of the hierarchy would create a 'cascading explosion' of new Versions: The new district Version would call for new Versions of all belonging municipalities but also for a new Version of the higher up hierarchy level (e.g. Canton) which would in turn lead to new Versions for all districts in this canton and again for all belonging municipalities of these districts. This cascade would not stop until all the Versions of the [VersionedIdentitySet](#VersionedIdentitySet) are newly created.
+
+A pragmatic middle course can be chosen by allowing Versions to have only one 'uplink' to the next hierarchy level but multiple (and some of them not valid at all times) 'downlinks' to the lower hierarchy level. This means that a change in a certain hierarchy level with a new Version creates all new Versions for the belonging Versions in the lower hierarchy levels but not to the hierarchy above and therefore contains the 'cascading explosion'.
+
+A complete different approach would be to link *Versions* in one hierarchy level to *Identities* in other hierarchy levels with the idea that e.g. a change of name in a district does not lead to a new Identity and that therefore all belonging municipality Versions still can point to the Identity of the district.
+
+The version.link schema does not impose restrictions on this linking accross hierarchy levels but allows the user to choose a domain-adapted solution.
+
+The following image illustrates two Versions linking to a Version in a upper hierarchy level with schema:isPartOf. A query has to take into account the schema:endDate and schema:startDate of the Versions to check the validity of the schema:isPartOf links:
+
+![Linking across hierarchy levels](./img/linking_hierarchies.svg "Linking across hierarchy levels.")
+### Linking Directions
+
+Different possibilities for choosing the linking direction across hierarchy levels exist:
     
-* Linking only from lower hierarchy levels to the upper level(s)
-* Linking only from upper hierarchy levels to the lower level(s)
+* Linking only from lower hierarchy levels to the upper level(s) with [isPartOfPredicate](#isPartOfPredicate)
+* Linking only from upper hierarchy levels to the lower level(s) with [hasPartPredicate](#hasPartPredicate)
 * Linking in both directions
     
 From the point of view of a SPARQL query, these three variants are more or less identical and do not exhibit any particular advantages. If there are lots of Versions in a lower level belonging to one Identity in an upper hierarchy level, it may be advantageous to only link from the lower to the upper level because of clarity in dereferencing the upper level (otherwise it is possible that the upper level has a myriad of [hasPartPredicate](#hasPartPredicate) entries).
-
-The following image illustrates a Version linking to an Identity in another hierarchy level (and not to the corresponding Version):
-
-![Linking across hierarchy levels](./img/linking_hierarchies.svg "Linking across hierarchy levels: Note the red link that leads to the Identity and not to the Version of the upper hierarchy level.")
