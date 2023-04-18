@@ -72,7 +72,7 @@
   rdfs:domain <Identity>;
   rdfs:domain <VersionedIdentitySet>;
   rdfs:label "in versioned identity set";
-  rdfs:comment "Connects an Identity, Version or ChangeEvent to a specific VersionedIdentitySet". 
+  rdfs:comment "Connects an Identity, Version or ChangeEvent to a specific VersionedIdentitySet.". 
 
 <ChangeEvent> a rdfs:Class;
   rdfs:label "Change Event";
@@ -86,24 +86,29 @@
 <ChangeOfName> a rdfs:Class;
   rdfs:subClassOf <ChangeEvent>;
   rdfs:label "Change Of Name";
-  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of name of the corresponding Identity".
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of name of the corresponding Identity.".
 
 <Separation> a rdfs:Class;
   rdfs:subClassOf <ChangeEvent>;
   rdfs:label "Separation";
-  rdfs:comment "Change type of a ChangeEvent that corresponds to a separation of the corresponding Identity into multiple identities".
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a separation of the corresponding Identity into multiple identities.".
 
 <Combination> a rdfs:Class;
   rdfs:subClassOf <ChangeEvent>;
   rdfs:label "Combination";
-  rdfs:comment "Change type of a ChangeEvent that corresponds to a combination of the corresponding Identities into a single Identity".
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a combination of the corresponding Identities into a single Identity.".
 
 <ChangeInHierarchy> a rdfs:Class;
   rdfs:subClassOf <ChangeEvent>;
   rdfs:label "Change In Hierarchy";
-  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of the position of the corresponding Identity in hierarchy (on the same level)".
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of the position of the corresponding Identity in hierarchy (on the same level).".
 
 <ChangeOfHierarchyLevel> a rdfs:Class;
   rdfs:subClassOf <ChangeEvent>;
   rdfs:label "Change In Hierarchy";
-  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of the hierarchy level of the corresponding Identity".
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a change of the hierarchy level of the corresponding Identity.".
+
+<Deprecation> a rdfs:Class;
+  rdfs:subClassOf <ChangeEvent>;
+  rdfs:label "Deprecation";
+  rdfs:comment "Change type of a ChangeEvent that corresponds to a deprecation of the corresponding Identity.".
