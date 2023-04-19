@@ -74,9 +74,9 @@ miv:11299 a vl:Version;
     schema:identifier "11299";
     schema:name "Klosters";
     schema:isPartOf dt:1811;
-    schema:startDate "1960-01-01T00:00:00"^^xsd:dateTime;
+    schema:validFrom "1960-01-01T00:00:00"^^xsd:dateTime;
     vl:startEvent mce:1000_11299;
-    schema:endDate "1973-12-31T24:00:00"^^xsd:dateTime;
+    schema:validThrough "1973-12-31T24:00:00"^^xsd:dateTime;
     vl:endEvent mce:1048;
     vl:successor miv:13233.
 
@@ -88,9 +88,9 @@ miv:13233 a vl:Version;
     schema:identifier "13233";
     schema:name "Klosters-Serneus";
     schema:isPartOf dt:1811;
-    schema:startDate "1974-01-01T00:00:00"^^xsd:dateTime;
+    schema:validFrom "1974-01-01T00:00:00"^^xsd:dateTime;
     vl:startEvent mce:1048;
-    schema:endDate "2000-12-31T24:00:00"^^xsd:dateTime;
+    schema:validThrough "2000-12-31T24:00:00"^^xsd:dateTime;
     vl:endEvent mce:2110;
     vl:predecessor miv:11299;
     vl:successor miv:14310.
@@ -106,14 +106,14 @@ miv:13233 a vl:Version;
 mce:1000_11299 a vl:ChangeEvent;
     a admin:MunicipalityChangeEvent;
     a vl:InitialRecording;
-    schema:startDate "1960-01-01T00:00:00"^^xsd:dateTime;
+    schema:validFrom "1960-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     vl:successor miv:11299.
 
 mce:1048 a vl:ChangeEvent;
     a admin:MunicipalityChangeEvent;
     a vl:ChangeOfName;
-    schema:startDate "1974-01-01T00:00:00"^^xsd:dateTime;
+    schema:validFrom "1974-01-01T00:00:00"^^xsd:dateTime;
     vl:inVersionedIdentitySet <https://ld.admin.ch/municipality>;
     vl:predecessor miv:11299;
     vl:successor miv:13233.

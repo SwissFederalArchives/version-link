@@ -78,8 +78,8 @@ Mandatory and optional properties (and values) for [vl:Version](#Version):
 |[vl:identityIdentifier](#identityIdentifier)|[vl:endEvent](#endEvent)|
 |[vl:inVersionedIdentitySet](#inVersionedIdentitySet)|[schema:hasPart](https://schema.org/hasPart)|
 |[schema:identifier](https://schema.org/identifier)|[schema:isPartOf](https://schema.org/isPartOf)|
-|[vl:predecessor](#predecessor) (if applicable)|[schema:startDate](https://schema.org/startDate)|
-|[vl:successor](#successor) (if applicable)|[schema:endDate](https://schema.org/endDate)|
+|[vl:predecessor](#predecessor) (if applicable)|[schema:validFrom](https://schema.org/validFrom)|
+|[vl:successor](#successor) (if applicable)|[schema:validThrough](https://schema.org/validThrough)|
 ||rdf:type [vl:Deprecated](#Deprecated)|
 
 <aside class='example' title='Version example'>
@@ -204,8 +204,8 @@ In [[[turtle]]] syntax, an example Profile might look like this:
 vl:Profile_SchemaOrg a vl:Profile;
     vl:identifierPredicate schema:identifier;
     vl:namePredicate schema:name;
-    vl:startDatePredicate schema:startDate;
-    vl:endDatePredicate schema:endDate;
+    vl:validFromPredicate schema:validFrom;
+    vl:validThroughPredicate schema:validThrough;
     vl:hasPartPredicate schema:hasPart;
     vl:isPartOfPredicate schema:isPartOf.
 ```
@@ -218,8 +218,8 @@ vl:Profile_SchemaOrg a vl:Profile;
 vl:Profile_SKOS a vl:Profile;
     vl:identifierPredicate skos:notation;
     vl:namePredicate skos:prefLabel;
-    vl:startDatePredicate dcterms:date;
-    vl:endDatePredicate dcterms:date;
+    vl:validFromPredicate dcterms:date;
+    vl:validThroughPredicate dcterms:date;
     vl:hasPartPredicate skos:narrower;
     vl:isPartOfPredicate skos:broader.
 ```
@@ -238,11 +238,11 @@ Binds the identification to a [Version](#Version) or [Identity](#Identity). Allo
 
 Binds the name to a [Version](#Version) or [Identity](#Identity).
 
-#### vl:startDatePredicate {#startDatePredicate}
+#### vl:validFromPredicate {#validFromPredicate}
 
 Binds the start date to a [Version](#Version) or the date to a [ChangeEvent](#ChangeEvent) (as there is no schema:date).
 
-#### vl:endDatePredicate {#endDatePredicate}
+#### vl:validThroughPredicate {#validThroughPredicate}
 
 Binds the end date to a [Version](#Version).
 
@@ -270,7 +270,7 @@ A complete different approach would be to link *Versions* in one hierarchy level
 
 The version.link schema does not impose restrictions on this linking accross hierarchy levels but allows the user to choose a domain-adapted solution.
 
-The following image illustrates two Versions linking to a Version in a upper hierarchy level with schema:isPartOf. A query has to take into account the schema:endDate and schema:startDate of the Versions to check the validity of the schema:isPartOf links:
+The following image illustrates two Versions linking to a Version in a upper hierarchy level with schema:isPartOf. A query has to take into account the schema:validThrough and schema:validFrom of the Versions to check the validity of the schema:isPartOf links:
 
 ![Linking across hierarchy levels](./img/linking_hierarchies.svg "Linking across hierarchy levels.")
 ### Linking Directions
