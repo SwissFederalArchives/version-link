@@ -3,12 +3,11 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 
 # A version.link profile for schema.org concepts.
-
 vl:Profile_SchemaOrg a vl:Profile;
     vl:identifierPredicate schema:identifier;
     vl:namePredicate schema:name;
-    vl:startDatePredicate schema:startDate;
-    vl:endDatePredicate schema:endDate;
+    vl:validFromPredicate schema:validFrom;
+    vl:validThroughPredicate schema:validThrough;
     vl:hasPartPredicate schema:hasPart;
     vl:isPartOfPredicate schema:isPartOf.
 
@@ -16,7 +15,7 @@ vl:Profile_SchemaOrg a vl:Profile;
 vl:Profile_SKOS a vl:Profile;
     vl:identifierPredicate skos:notation;
     vl:namePredicate skos:prefLabel;
-    vl:startDatePredicate dcterms:date;
-    vl:endDatePredicate dcterms:date;
+    vl:validFromPredicate dcterms:date;
+    vl:validThroughPredicate dcterms:date;
     vl:hasPartPredicate skos:narrower;
     vl:isPartOfPredicate skos:broader.
